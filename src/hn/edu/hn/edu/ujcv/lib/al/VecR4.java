@@ -34,13 +34,6 @@ public class VecR4 {
         return retval;
     }
 
-    public VecR4 crossProduct(VecR4 b){
-        // ? buscar formula en google.com o en duckduckgo
-        VecR4 retval = new VecR4();
-
-        return retval;
-    }
-
     public VecR4 div(double alpha){
         VecR4 retval = new VecR4();
 
