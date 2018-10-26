@@ -34,7 +34,17 @@ public class VecR3 {
     }
 
     public VecR3 crossProduct(VecR3 b){
-        // ? buscar formula en google.com o en duckduckgo
+        // dividir formula en componentes vectoriales
+        // U X V
+        //sea U [1,2,-2]
+        //sea V [3,0,1 ]
+        //          |   i     j     k |
+        // U X V =  |   1     2    -2 |  =  [2, -7, -6]
+        //          |   3     0     1 |
+        // formula por componenters
+        // i = ?
+        // j = -(u1 * v3 - v1 * u3)
+        // k = ?
         VecR3 retval = new VecR3();
 
         return retval;
