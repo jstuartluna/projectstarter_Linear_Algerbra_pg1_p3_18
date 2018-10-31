@@ -64,7 +64,29 @@ public class Mat2x2 {
     // retornados y recibidos.
     // suma
     public Mat2x2 suma (Mat2x2 b){
-        return new Mat2x2();
+         Mat2x2 retval = new Mat2x2();
+        //            cx cy              cx cy
+         // dado A  | 1  2 |  dado b  |  1  1 | x
+        //          | 2  3 |          |  0  0 |  y
+        //
+        //   retval:
+        //   |  a.cx.x + b.cx.x     a.cy.x +  b.cy.x |
+        //   |  a.cx.y + b.cx.y     a.cy.y + b.cy.y  |
+        //
+        //   a es this.
+        //   b es b
+        //   cx es colX
+        //   cy es colY
+        //   x es   getX , setX
+        //   y es   getY , setY
+
+        retval.colX.setX(this.colX.getX() + b.colX.getX());
+        retval.colX.setY(this.colX.getY() + b.colX.getY());
+        retval.colY.setX(this.colY.getX() + b.colY.getX());
+        retval.colY.setY(this.colY.getY() + b.colY.getY());
+
+
+         return retval;
     }
     // resta
     public Mat2x2 resta (Mat2x2 b){
@@ -80,6 +102,25 @@ public class Mat2x2 {
     }
     // multiplicacion por matriz
     public Mat2x2 mul (Mat2x2 b){
-        return  new Mat2x2();
+        Mat2x2 retval =  new Mat2x2();
+        //            cx cy              cx cy
+         // dado A  x| 1  2 |  dado b  |  1  1 | fx
+        //          y| 2  3 |          |  0  0 | fy
+        //             x  y
+        //   retval:
+        //   |   a.fx.dot(b.cx)   a.fx.dot(b.cy) |
+        //   |   a.fy.dot(b.cx)   a.fy.dot(b.cy) |
+        //
+        //   a es this.
+        //   b es b
+        //   cx es colX
+        //   cy es colY
+        //   x es   getX , setX
+        //   y es   getY , setY
+        retval.colX.setX(this.getFilaX().dotProduct(b.colX));
+        retval.colX.setY(this.getFilaY().dotProduct(b.colX));
+
+
+        return retval;
     }
 }
