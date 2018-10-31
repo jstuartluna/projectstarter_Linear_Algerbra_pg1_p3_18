@@ -90,7 +90,10 @@ public class Mat2x2 {
     }
     // resta
     public Mat2x2 resta (Mat2x2 b){
-        return new Mat2x2();
+        Mat2x2 retval = new Mat2x2();
+
+
+        return retval;
     }
     // multiplicacion escalar
     public  Mat2x2 mul(double alpha){
