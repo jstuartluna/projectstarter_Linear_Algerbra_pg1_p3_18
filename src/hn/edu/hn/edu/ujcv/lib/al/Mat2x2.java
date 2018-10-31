@@ -119,6 +119,8 @@ public class Mat2x2 {
         //   y es   getY , setY
         retval.colX.setX(this.getFilaX().dotProduct(b.colX));
         retval.colX.setY(this.getFilaY().dotProduct(b.colX));
+        retval.colY.setX(this.getFilaX().dotProduct(b.colY));
+        retval.colY.setY(this.getFilaY().dotProduct(b.colY));
 
 
         return retval;
