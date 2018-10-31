@@ -108,7 +108,7 @@ public class Mat2x2 {
         retval.colX.setX(this.colX.getX() - b.colX.getX());
         retval.colX.setY(this.colX.getY() - b.colX.getY());
         retval.colY.setX(this.colY.getX() - b.colY.getX());
-        retval.colY.setY(this.colY.getY() + b.colY.getY());
+        retval.colY.setY(this.colY.getY() - b.colY.getY());
         return retval;
     }
     // multiplicacion escalar
