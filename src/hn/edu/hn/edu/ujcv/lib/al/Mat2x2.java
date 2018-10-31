@@ -91,7 +91,20 @@ public class Mat2x2 {
     // resta
     public Mat2x2 resta (Mat2x2 b){
         Mat2x2 retval = new Mat2x2();
-
+        //            cx cy              cx cy
+        // dado A  | 1  2 |  dado b  |  1  1 | x
+        //          | 2  3 |          |  0  0 |  y
+        //
+        //   retval:
+        //   |  a.cx.x - b.cx.x     a.cy.x -  b.cy.x |
+        //   |  a.cx.y - b.cx.y     a.cy.y - b.cy.y  |
+        //
+        //   a es this.
+        //   b es b
+        //   cx es colX
+        //   cy es colY
+        //   x es   getX , setX
+        //   y es   getY , setY
 
         return retval;
     }
