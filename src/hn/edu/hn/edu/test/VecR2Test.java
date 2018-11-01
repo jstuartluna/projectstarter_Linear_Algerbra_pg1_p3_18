@@ -12,6 +12,7 @@ public class VecR2Test {
     private VecR2 d;
     private VecR2 e;
     private VecR2 f;
+    private VecR2 fx2;
     private double delta;
 
     @org.junit.Before
@@ -22,6 +23,7 @@ public class VecR2Test {
         d = new VecR2(-2.2,-1.1);
         e = new VecR2(3,3);
         f = new VecR2(-10,50);
+        fx2 = new VecR2(-20,100);
         delta = 0.00001;
 
     }
@@ -33,14 +35,13 @@ public class VecR2Test {
     @org.junit.Test
     public void add() {
         VecR2 temp = a.add(b);
-        assertEquals(b.getX(),temp.getX(),delta);
-        assertEquals(b.getY(),temp.getY(),delta);
+        assertEqualsVecR2(b,temp,delta);
         temp = b.add(d);
-        assertEquals(a.getX(),temp.getX(),delta);
-        assertEquals(a.getY(),temp.getY(),delta);
+        assertEqualsVecR2(a,temp,delta);
         temp = f.add(f);
-        assertEquals(f.getX()*2,temp.getX(),delta);
-        assertEquals(f.getY()*2,temp.getY(),delta);
+        assertEqualsVecR2(fx2,temp,delta);
+        // probando constructor de copia.
+        assertEqualsVecR2(b,c,delta);
 
     }
 
@@ -58,5 +59,10 @@ public class VecR2Test {
 
     @org.junit.Test
     public void div() {
+    }
+
+    public static void assertEqualsVecR2(VecR2 expected, VecR2 actual, double delta){
+        assertEquals(expected.getX(),actual.getX(),delta);
+        assertEquals(expected.getY(),actual.getY(),delta);
     }
 }
