@@ -59,20 +59,4 @@ public class VecR2Test {
     @org.junit.Test
     public void div() {
     }
-
-    @org.junit.Test
-    public void getX() {
-    }
-
-    @org.junit.Test
-    public void setX() {
-    }
-
-    @org.junit.Test
-    public void getY() {
-    }
-
-    @org.junit.Test
-    public void setY() {
-    }
 }
