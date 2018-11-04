@@ -7,13 +7,16 @@ public class VecR2 {
     private double y;
 
     public VecR2 add( VecR2 b){
-        return new VecR2(x+b.x,y+b.y);
+        VecR2 retval = new VecR2();
+        retval.x = x + b.x;
+        retval.setY(this.getY() + b.getY());
+        return retval;
     }
 
     public VecR2 sub(VecR2 b){
         VecR2 retval = new VecR2();
-        retval.x = x + b.x;
-        retval.setY(this.getY()+ b.getY());
+        retval.x = x - b.x;
+        retval.setY(this.getY()- b.getY());
         return retval;
     }
 
@@ -34,12 +37,13 @@ public class VecR2 {
         return retval;
     }
 
-    public VecR2 div(double alpha){
+    /*public VecR2 div(double alpha){
         VecR2 retval = new VecR2();
 
 
+
         return retval;
-    }
+    }*/
 
     public VecR2()
     {
