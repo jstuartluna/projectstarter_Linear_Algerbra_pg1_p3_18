@@ -32,9 +32,9 @@ public class VecR4Test {
         fx2 = new VecR4(-20,100,6,6);
         ex3 = new VecR4(9,9,9,9);
         aDb = 0;
-        bDd = -4.84 + -1.21 + -9 +-9;
+        bDd = -4.84 + -1.21 + -9 + -9;
         eDe = 3*3 +3*3 + 3*3 +3*3;
-        dDe = -2.2 * 3 + -1.1 * 3 + 3*3 + 3*3;
+        dDe = -2.2 * 3 + -1.1 * 3 + 3*3 + 3* -3;
 
         delta = 0.00001;
     }
@@ -45,21 +45,52 @@ public class VecR4Test {
 
     @Test
     public void add() {
+        VecR4 temp = a.add(b);
+        assertEqualsVecR4(b,temp,delta);
+        temp = b.add(d);
+        assertEqualsVecR4(a,temp,delta);
+        temp = f.add(f);
+        assertEqualsVecR4(fx2,temp,delta);
+        // probando constructor de copia.
+        assertEqualsVecR4(b,c,delta);
+    }
+
+    private void assertEqualsVecR4(VecR4 expected, VecR4 actual, double delta) {
     }
 
     @Test
     public void sub() {
+        VecR4 temp = a.add(b);
+        assertEqualsVecR4(b,temp,delta);
+        temp = b.add(d);
+        assertEqualsVecR4(a,temp,delta);
+        temp = f.add(f);
+        assertEqualsVecR4(fx2,temp,delta);
     }
 
     @Test
     public void mul() {
+        VecR4 temp = e.mul(3);
+        assertEqualsVecR4(ex3,temp,delta);
+        temp = f.mul(2);
+        assertEqualsVecR4(fx2,temp,delta);
     }
 
     @Test
     public void dotProduct() {
+        assertEquals(aDb,a.dotProduct(b),delta);
+        assertEquals(bDd,b.dotProduct(d),delta);
+        assertEquals(eDe,e.dotProduct(e),delta);
+        assertEquals(dDe,d.dotProduct(e),delta);
     }
 
     @Test
     public void div() {
+        VecR4 temp = e.div(3);
+        assertEqualsVecR4(new VecR4(1,1,1,1),temp,delta);
+        temp = ex3.div(3);
+        assertEqualsVecR4(e,temp,delta);
+        temp = fx2.div(2.00000000000001);
+        assertEqualsVecR4(f,temp,delta);
     }
 }
