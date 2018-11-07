@@ -1,13 +1,25 @@
 package hn.edu.hn.edu.ujcv.lib.al;
 
 public class VecR4 {
+    public VecR4(double v, double v1, double v2, double v3) {
+
+    }
+
+    public VecR4() {
+
+    }
+
+    public VecR4(VecR4 b) {
+
+    }
 
     //todo: Definir variables y constructores
 
 
     //todo: conformar al contrato de un vector
 
-    public VecR4 add( VecR2 b){
+    public VecR4 add(VecR4 b){
+        VecR4 retval = new VecR4();
         return new VecR4();
     }
 
@@ -40,4 +52,6 @@ public class VecR4 {
 
         return retval;
     }
+
+
 }

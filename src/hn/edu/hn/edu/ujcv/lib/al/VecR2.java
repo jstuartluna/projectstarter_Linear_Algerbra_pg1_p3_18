@@ -65,9 +65,9 @@ public class VecR2 {
         this.y = y;
     }
 
-    public VecR2(VecR2 v){
-        x = v.x;
-        y = v.y;
+    public VecR2(VecR2 b){
+        this.x = b.x;
+        this.y = b.y;
     }
 
 
@@ -79,7 +79,11 @@ public class VecR2 {
         this.x = x;
     }
 
-    public double getY() { return y;}
+    public double getY() {
+        return y;
+    }
 
-    public void setY(double y) { this.y = y;}
+    public void setY(double y) {
+        this.y = y;
+    }
 }

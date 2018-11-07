@@ -6,6 +6,9 @@ public class VecR3 {
     private double y;
     private double z;
 
+    public VecR3(double x, double y, double z) {
+    }
+
     public VecR3 crossProduct(VecR3 c){
         // dividir formula en componentes vectoriales
         // U X V
@@ -51,19 +54,20 @@ public class VecR3 {
     }
 
 
-    public VecR3 mul(VecR3 c) {
+    public VecR3 mul(double alpha){
         VecR3 retval = new VecR3();
-        retval.setX(this.x * c.x);
-        retval.setY(this.y * c.y);
-        retval.setZ(this.z * c.z);
+        retval.setX(this.x * alpha);
+        retval.setY(this.y * alpha);
+        retval.setZ(this.z * alpha);
         return retval;
     }
 
-        public double dotProduct (VecR3 c){
-            double retval;
-            retval = this.x * c.x + this.y * c.y + this.z * c.z;
-            return retval;
-        }
+
+    public double dotProduct(VecR3 c){
+        double retval;
+        retval = this.x * c.x + this.y * c.y;
+        return retval;
+    }
 
         public VecR3 div (VecR3 c){
             VecR3 retval = new VecR3();
@@ -89,9 +93,9 @@ public class VecR3 {
         }
 
     public VecR3(VecR3 c) {
-            x = c.x;
-            y = c.y;
-            z = c.z;
+            this.x = c.x;
+            this.y = c.y;
+            this.z = c.z;
 
         }
 
@@ -125,4 +129,9 @@ public class VecR3 {
 
             this.y = y;
         }
+
+    public double getZ() {
+        return 0;
     }
+
+}
