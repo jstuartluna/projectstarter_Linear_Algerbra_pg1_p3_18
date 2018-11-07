@@ -6,73 +6,34 @@ public class VecR3 {
     private double y;
     private double z;
 
-
-    public VecR3()
-    {
-        this.x = 0;
-        this.y = 0;
-        this.z = 0;
-    }
-
-    public VecR3(double x, double y)
-    {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
-
-    public VecR3(VecR3 v){
-        x = v.x;
-        y = v.y;
-        z = v.z;
-
-    }
-
-
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getZ() {
-        return z;
-    }
-
-    public void setZ(double z){
-        this.z = z;
-    }
-
-    public double getY() { return y;}
-
-    public void setY(double y) { this.y = y;}
-}
-
     //todo: Definir variables y constructores
 
 
     //todo: conformar al contrato de un vector
 
-    public VecR3 add( VecR2 b){
+    public VecR3 add( VecR3 c){
 
-    VecR2 retval = new VecR2();
-    retval.setX(this.getX() + b.getX());
-    retval.setY(this.getY() + b.getY());
-    retval.setZ(this.getZ() + b.getZ )
+    VecR3 retval = new VecR3();
+    retval.setX(this.getX() + c.getX());
+    retval.setY(this.getY() + c.getY());
+    retval.setZ(this.getZ() + c.getZ());
     return retval;
 
     return new VecR3();
     }
 
+
     public VecR3 sub(VecR3 b){
         VecR3 retval = new VecR3();
+        retval.setX(this.getX() - b.getX());
+        retval.setY(this.getY() - b.getY());
+        retval.setZ(this.getZ() - b.getZ());
         return retval;
     }
 
+
     public VecR3 mul(double alpha){
-        VecR3 retval = new VecR3();
+        VecR3 retval = new VecR3(this.getX()* alpha, this.getY() *alpha, this.getZ() * alpha);
         return retval;
     }
 
@@ -110,5 +71,56 @@ public class VecR3 {
 
 
         return retval;
+    } public VecR3()
+{
+    this.x = 0;
+    this.y = 0;
+    this.z = 0;
+}
+
+    public VecR3(double x, double y)
+    {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+
+    }
+
+    public VecR3(VecR3 w){
+        x = w.x;
+        y = w.y;
+        z = w.z;
+
+    }
+
+
+    public double getX() {
+
+        return x;
+    }
+
+    public void setX(double x) {
+
+        this.x = x;
+    }
+
+    public double getZ(double z) {
+
+        return z;
+    }
+
+    public void setZ(double z){
+
+        this.z = z;
+    }
+
+    public double getY() {
+
+        return y;
+    }
+
+    public void setY(double y) {
+
+        this.y = y;
     }
 }
