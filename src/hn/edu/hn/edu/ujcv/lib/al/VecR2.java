@@ -6,44 +6,52 @@ public class VecR2 {
     private double x;
     private double y;
 
-    public VecR2 add( VecR2 b){
-        VecR2 retval = new VecR2();
-        retval.x = x + b.x;
-        retval.setY(this.getY() + b.getY());
-        return retval;
-    }
-
-    public VecR2 sub(VecR2 b){
-        VecR2 retval = new VecR2();
-        retval.x = x - b.x;
-        retval.setY(this.getY()- b.getY());
-        return retval;
-    }
 
     public VecR2 mul(double alpha){
         VecR2 retval = new VecR2(this.getX()* alpha, y *alpha);
         return retval;
     }
 
+    public VecR2 div(double alpha){
+        VecR2 retval = new VecR2();
+        retval.setX(this.x / alpha);
+        retval.setY(this.y / alpha);
+        return retval;
+    }
+
+    public VecR2 add(VecR2 b) {
+        VecR2 retval = new VecR2();
+        retval.setX(this.x + b.x);
+        retval.setY(this.y + b.y);
+        return retval;
+    }
+
+    public VecR2 sub(VecR2 b) {
+        VecR2 retval = new VecR2();
+        retval.setX(this.x - b.x);
+        retval.setY(this.y - b.y);
+        return retval;
+    }
+
+    public VecR2 mul(VecR2 b) {
+        VecR2 retval = new VecR2();
+        retval.setX(this.x * b.x);
+        retval.setY(this.y * b.y);
+        return retval;
+    }
+
     public double dotProduct(VecR2 b){
-        // segun google:
-        // alpha = (u1 * v1) + (u2 * v2)
-        // u es this.
-        // v es b.
-        // 1 es x.
-        // 2 es y.
         double retval;
         retval = this.x * b.x + this.y * b.y;
         return retval;
     }
 
-    /*public VecR2 div(double alpha){
+    public VecR2 div(VecR2 b) {
         VecR2 retval = new VecR2();
-
-
-
+        retval.setX(this.x / b.x);
+        retval.setY(this.y / b.y);
         return retval;
-    }*/
+    }
 
     public VecR2()
     {
