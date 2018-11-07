@@ -6,7 +6,7 @@ public class VecR3 {
     private double y;
     private double z;
 
-  /public VecR3 crossProduct(VecR3 c){
+    public VecR3 crossProduct(VecR3 c){
         // dividir formula en componentes vectoriales
         // U X V
         //sea U [1,2,-2]
