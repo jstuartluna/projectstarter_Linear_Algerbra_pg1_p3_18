@@ -6,18 +6,12 @@ public class VecR3 {
     private double y;
     private double z;
 
-    //todo: Definir variables y constructores
-
-
-    //todo: conformar al contrato de un vector
-
-
-   public VecR3 crossProduct(VecR3 b){
+  /public VecR3 crossProduct(VecR3 c){
         // dividir formula en componentes vectoriales
         // U X V
         //sea U [1,2,-2]
         //sea V [3,0,1 ]
-        //          |   i     j     k |
+        //          |   x     y     z |
         // U X V =  |   1     2    -2 |  =  [2, -7, -6]
         //          |   3     0     1 |
         // formula por componenters
@@ -26,8 +20,10 @@ public class VecR3 {
         // k = ?
 
        VecR3 retval = new VecR3();
-
-        return retval;
+       retval.setX((this.y * c.z)- (this.z * c.y));
+       retval.setY((this.x * c.z)- (this.z * c.x));
+       retval.setZ((this.x * c.y)- (this.y * c.x));
+       return retval;
     }
 
     public VecR3 div(double alpha){
