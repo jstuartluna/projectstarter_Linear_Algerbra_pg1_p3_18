@@ -7,7 +7,7 @@ public class VecR3 {
     private double z;
 
 
-    public VecR3 crossProduct(VecR3 c){
+    public VecR3 crossProduct(VecR3 b){
         // dividir formula en componentes vectoriales
         // U X V
         //sea U [1,2,-2]
@@ -21,9 +21,9 @@ public class VecR3 {
         // k = ?
 
         VecR3 retval = new VecR3();
-       retval.setX((this.y * c.z)- (this.z * c.y));
-       retval.setY((this.x * c.z)- (this.z * c.x));
-       retval.setZ((this.x * c.y)- (this.y * c.x));
+       retval.setX((this.y * b.z)- (this.z * b.y));
+       retval.setY(-((this.x * b.z)- (this.z * b.x)));
+       retval.setZ((this.x * b.y)- (this.y * b.x));
        return retval;
     }
 
@@ -35,19 +35,19 @@ public class VecR3 {
          return retval;
     }
 
-    public VecR3 add(VecR3 c) {
+    public VecR3 add(VecR3 b) {
         VecR3 retval = new VecR3();
-        retval.setX(this.x + c.x);
-        retval.setY(this.y + c.y);
-        retval.setZ(this.z + c.z);
+        retval.setX(this.x + b.x);
+        retval.setY(this.y + b.y);
+        retval.setZ(this.z + b.z);
         return retval;
     }
 
-    public VecR3 sub(VecR3 c) {
+    public VecR3 sub(VecR3 b) {
         VecR3 retval = new VecR3();
-        retval.setX(this.x - c.x);
-        retval.setY(this.y - c.y);
-        retval.setZ(this.z - c.z);
+        retval.setX(this.x - b.x);
+        retval.setY(this.y - b.y);
+        retval.setZ(this.z - b.z);
         return retval;
     }
 
@@ -61,18 +61,24 @@ public class VecR3 {
     }
 
 
-    public double dotProduct(VecR3 c){
-        double retval = 0.0;
-        retval = (this.x * c.x) + (this.y * c.y) + (this.z * c.z);
+    public double dotProduct(VecR3 b){
+        // segun google:
+        // alpha = (u1 * v1) + (u2 * v2) + (u3 * v3)
+        // u es this.
+        // v es b.
+        // 1 es x.
+        // 2 es y.
+        // 3 es z.
+        double retval;
+        retval = (this.x * b.x) + (this.y * b.y) + (this.z * b.z);
         return retval;
-
     }
 
-        public VecR3 div (VecR3 c){
+        public VecR3 div (VecR3 b){
             VecR3 retval = new VecR3();
-            retval.setX(this.x / c.x);
-            retval.setY(this.y / c.y);
-            retval.setZ(this.z / c.z);
+            retval.setX(this.x / b.x);
+            retval.setY(this.y / b.y);
+            retval.setZ(this.z / b.z);
             return retval;
 
         }
@@ -91,10 +97,10 @@ public class VecR3 {
 
         }
 
-    public VecR3(VecR3 c) {
-            x = c.x;
-            y = c.y;
-            z = c.z;
+    public VecR3(VecR3 b) {
+            x = b.x;
+            y = b.y;
+            z = b.z;
 
         }
 

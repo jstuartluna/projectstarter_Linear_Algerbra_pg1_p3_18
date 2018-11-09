@@ -25,11 +25,19 @@ public class VecR4 {
 
     public VecR4 sub(VecR4 b){
         VecR4 retval = new VecR4();
+        retval.setX(this.x - b.x);
+        retval.setY(this.y - b.y);
+        retval.setZ(this.z - b.z);
+        retval.setW(this.w - b.w);
         return retval;
     }
 
     public VecR4 mul(double alpha){
         VecR4 retval = new VecR4();
+        retval.setX(this.x * alpha);
+        retval.setY(this.y * alpha);
+        retval.setZ(this.z * alpha);
+        retval.setW(this.w * alpha);
         return retval;
     }
 
@@ -43,13 +51,16 @@ public class VecR4 {
         // 3 es z.
         // 4 es w.
         double retval = 0.0;
+        retval = (this.x * b.x) + (this.y * b.y) + (this.z * b.z) + (this.w * b.w);
         return retval;
     }
 
     public VecR4 div(double alpha){
         VecR4 retval = new VecR4();
-
-
+        retval.setX(this.x / alpha);
+        retval.setY(this.y / alpha);
+        retval.setZ(this.z / alpha);
+        retval.setW(this.w / alpha);
         return retval;
     }
     public VecR4() {
