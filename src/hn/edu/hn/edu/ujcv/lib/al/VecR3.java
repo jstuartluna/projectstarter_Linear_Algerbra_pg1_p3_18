@@ -85,54 +85,54 @@ public class VecR3 {
 
 
     public VecR3() {
-            this.x = 0;
-            this.y = 0;
-            this.z = 0;
-        }
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+    }
 
     public VecR3( double x, double y, double z){
-            this.x = x;
-            this.y = y;
-            this.z = z;
-
-        }
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
 
     public VecR3(VecR3 b) {
-            x = b.x;
-            y = b.y;
-            z = b.z;
+        x = b.x;
+        y = b.y;
+        z = b.z;
+    }
 
-        }
 
 
-        public double getX () {
+    public double getX () {
 
-            return x;
-        }
+        return x;
+    }
 
-        public  void setX ( double x){
+    public  void setX ( double x){
 
-            this.x = x;
-        }
+        this.x = x;
+    }
 
-        public double getY () {
-
-            return y;
-        }
-
-        public void setY ( double y){
-
-            this.y = y;
-        }
-
-        public double getZ() {
+    public double getZ (){
 
         return z;
-        }
+    }
 
-        public void setZ ( double z){
+    public void setZ ( double z){
 
         this.z = z;
     }
+
+    public double getY () {
+
+        return y;
+    }
+
+    public void setY ( double y){
+
+        this.y = y;
+    }
+
 
 }
