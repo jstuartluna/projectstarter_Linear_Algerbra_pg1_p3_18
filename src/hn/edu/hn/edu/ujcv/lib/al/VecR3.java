@@ -6,8 +6,6 @@ public class VecR3 {
     private double y;
     private double z;
 
-    public VecR3(double x, double y, double z) {
-    }
 
     public VecR3 crossProduct(VecR3 c){
         // dividir formula en componentes vectoriales
@@ -22,7 +20,7 @@ public class VecR3 {
         // j = -(u1 * v3 - v1 * u3)
         // k = ?
 
-       VecR3 retval = new VecR3();
+        VecR3 retval = new VecR3();
        retval.setX((this.y * c.z)- (this.z * c.y));
        retval.setY((this.x * c.z)- (this.z * c.x));
        retval.setZ((this.x * c.y)- (this.y * c.x));
@@ -64,9 +62,10 @@ public class VecR3 {
 
 
     public double dotProduct(VecR3 c){
-        double retval;
-        retval = this.x * c.x + this.y * c.y;
+        double retval = 0.0;
+        retval = (this.x * c.x) + (this.y * c.y) + (this.z * c.z);
         return retval;
+
     }
 
         public VecR3 div (VecR3 c){
@@ -85,7 +84,7 @@ public class VecR3 {
             this.z = 0;
         }
 
-    public VecR3( double x, double y){
+    public VecR3( double x, double y, double z){
             this.x = x;
             this.y = y;
             this.z = z;
@@ -93,9 +92,9 @@ public class VecR3 {
         }
 
     public VecR3(VecR3 c) {
-            this.x = c.x;
-            this.y = c.y;
-            this.z = c.z;
+            x = c.x;
+            y = c.y;
+            z = c.z;
 
         }
 
@@ -105,19 +104,9 @@ public class VecR3 {
             return x;
         }
 
-        public void setX ( double x){
+        public  void setX ( double x){
 
             this.x = x;
-        }
-
-        public double getZ ( double z){
-
-            return z;
-        }
-
-        public void setZ ( double z){
-
-            this.z = z;
         }
 
         public double getY () {
@@ -130,8 +119,14 @@ public class VecR3 {
             this.y = y;
         }
 
-    public double getZ() {
-        return 0;
+        public double getZ() {
+
+        return z;
+        }
+
+        public void setZ ( double z){
+
+        this.z = z;
     }
 
 }
