@@ -85,9 +85,9 @@ public class VecR3 {
 
 
     public VecR3() {
-        this.x = 0;
-        this.y = 0;
-        this.z = 0;
+        x = 0;
+        y = 0;
+        z = 0;
     }
 
     public VecR3( double x, double y, double z){
@@ -114,7 +114,7 @@ public class VecR3 {
         this.x = x;
     }
 
-    public double getZ (){
+    public double getZ () {
 
         return z;
     }
