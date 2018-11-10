@@ -72,6 +72,18 @@ public class Mat3x3 {
 
     }
 
+    public VecR3 getFilaZ(){
+        VecR3 retval = new VecR3(colX.getY(),colY.getY(),colZ.getY());
+        return retval;
+    }
+
+    public void  setFilaZ(VecR3 filaZ){
+        this.colX.setY(filaZ.getX());
+        this.colY.setY(filaZ.getY());
+        this.colZ.setY(filaZ.getY());
+
+    }
+
     // este contrato debe estar en las demas matrices
     // y no debe variar mas que en la dimencion de los objetos
     // retornados y recibidos.
@@ -163,25 +175,33 @@ public class Mat3x3 {
     // multiplicacion por matriz
     public Mat3x3 mul (Mat3x3 b){
         Mat3x3 retval =  new Mat3x3();
-        //            cx cy              cx cy
-        // dado A  x| 1  2 |  dado b  |  1  1 | fx
-        //          y| 2  3 |          |  0  0 | fy
-        //             x  y
+        //          cx cy  cz              cx cy cz
+        // dado A  | 1  2  3 |  dado b  |  1  1  1 |  x
+        //         | 2  3  4 |          |  0  0  0 |  y
+        //         | 4  5  6 |          |  3  3  3 |  Z
+        //           x  y  z
         //   retval:
-        //   |   a.fx.dot(b.cx)   a.fx.dot(b.cy) |
-        //   |   a.fy.dot(b.cx)   a.fy.dot(b.cy) |
+        //   |   a.fx.dot(b.cx)   a.fx.dot(b.cy)   a.fx.dot(b.cz)|
+        //   |   a.fy.dot(b.cx)   a.fy.dot(b.cy)   a.fy.dot(b.cz)|
+        //   |   a.fz.dot(b.cx)   a.fz.dot(b.cy)   a.fz.dot(b.cz)|
         //
         //   a es this.
         //   b es b
         //   cx es colX
         //   cy es colY
+        //   cz es colZ
         //   x es   getX , setX
         //   y es   getY , setY
+        //   z es   getZ , setZ
         retval.colX.setX(this.getFilaX().dotProduct(b.colX));
         retval.colX.setY(this.getFilaY().dotProduct(b.colX));
+        retval.colX.setX(this.getFilaZ().dotProduct(b.colZ));
         retval.colY.setX(this.getFilaX().dotProduct(b.colY));
         retval.colY.setY(this.getFilaY().dotProduct(b.colY));
+        retval.colY.setX(this.getFilaZ().dotProduct(b.colZ));
 
         return retval;
     }
+
+
 }
