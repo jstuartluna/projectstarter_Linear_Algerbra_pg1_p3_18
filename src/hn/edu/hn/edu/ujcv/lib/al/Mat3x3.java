@@ -194,11 +194,14 @@ public class Mat3x3 {
         //   y es   getY , setY
         //   z es   getZ , setZ
         retval.colX.setX(this.getFilaX().dotProduct(b.colX));
-        retval.colX.setY(this.getFilaY().dotProduct(b.colX));
-        retval.colX.setX(this.getFilaZ().dotProduct(b.colZ));
         retval.colY.setX(this.getFilaX().dotProduct(b.colY));
+        retval.colZ.setX(this.getFilaX().dotProduct(b.colZ));
+        retval.colX.setY(this.getFilaY().dotProduct(b.colX));
         retval.colY.setY(this.getFilaY().dotProduct(b.colY));
-        retval.colY.setX(this.getFilaZ().dotProduct(b.colZ));
+        retval.colZ.setY(this.getFilaY().dotProduct(b.colZ));
+        retval.colX.setZ(this.getFilaZ().dotProduct(b.colX));
+        retval.colY.setZ(this.getFilaZ().dotProduct(b.colY));
+        retval.colZ.setZ(this.getFilaZ().dotProduct(b.colZ));
 
         return retval;
     }
