@@ -1,16 +1,7 @@
 package hn.edu.hn.edu.ujcv.lib.al;
 
 public class Mat4x4 {
-    //double[][] arr;
 
-    //double m11;  double m12;
-    //double m21;  double m22;
-
-
-    // principios de la contencion
-    // 1. miembros de la clase privados
-    // 2. constructor.
-    // 3. accesores y mutadores (a.k.a. getters y setters)
     private VecR4 colX;
     private VecR4 colY;
     private VecR4 colZ;
@@ -115,31 +106,8 @@ public class Mat4x4 {
         this.colW.setW(filaW.getZ());
     }
 
-    // este contrato debe estar en las demas matrices
-    // y no debe variar mas que en la dimencion de los objetos
-    // retornados y recibidos.
-    // suma
     public Mat4x4 suma (Mat4x4 b){
         Mat4x4 retval = new Mat4x4();
-        //          cx cy  cz              cx cy cz
-        // dado A  | 1  2  3 |  dado b  |  1  1  1 |  x
-        //         | 2  3  4 |          |  0  0  0 |  y
-        //         | 4  5  6 |          |  3  3  3 |  Z
-        //
-        //   retval:
-        //   |  a.cx.x + b.cx.x     a.cy.x +  b.cy.x    a.cz.x +  b.cz.x  |
-        //   |  a.cx.y + b.cx.y     a.cy.y +  b.cy.y    a.cz.y +  b.cz.y  |
-        //   |  a.cx.z + b.cx.z     a.cy.z +  b.cy.z    a.cz.z +  b.cz.z  |
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   cz es colZ
-        //   x es   getX , setX
-        //   y es   getY , setY
-        //   z es   getZ , setZ
-
         retval.colX.setX(this.colX.getX() + b.colX.getX());
         retval.colX.setY(this.colX.getY() + b.colX.getY());
         retval.colX.setZ(this.colX.getZ() + b.colX.getZ());
@@ -158,29 +126,10 @@ public class Mat4x4 {
         retval.colW.setY(this.colW.getW() + b.colW.getW());
         return retval;
     }
+
     // resta
     public Mat4x4 resta (Mat4x4 b){
         Mat4x4 retval = new Mat4x4();
-        //          cx cy  cz              cx cy cz
-        // dado A  | 1  2  3 |  dado b  |  1  1  1 |  x
-        //         | 2  3  4 |          |  0  0  0 |  y
-        //         | 4  5  6 |          |  3  3  3 |  Z
-        //
-        //   retval:
-        //   |  a.cx.x - b.cx.x     a.cy.x - b.cy.x    a.cz.x - b.cz.x  |
-        //   |  a.cx.y - b.cx.y     a.cy.y - b.cy.y    a.cz.y - b.cz.y  |
-        //   |  a.cx.z - b.cx.z     a.cy.z - b.cy.z    a.cz.z - b.cz.z  |
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   cz es colZ
-        //   x es   getX , setX
-        //   y es   getY , setY
-        //   z es   getZ , setZ
-
-
         retval.colX.setX(this.colX.getX() - b.colX.getX());
         retval.colX.setY(this.colX.getY() - b.colX.getY());
         retval.colX.setZ(this.colX.getZ() - b.colX.getZ());
@@ -199,45 +148,36 @@ public class Mat4x4 {
         retval.colW.setY(this.colW.getW() - b.colW.getW());
         return retval;
     }
+
     // multiplicacion escalar
     public  Mat4x4 mul(double alpha){
         Mat4x4 retval = new Mat4x4();
         retval.colX.setX(this.colX.getX() * alpha);
         retval.colX.setX(this.colY.getX() * alpha);
         retval.colX.setX(this.colZ.getX() * alpha);
+        retval.colX.setX(this.colW.getX() * alpha);
         retval.colY.setY(this.colX.getY() * alpha);
         retval.colY.setY(this.colY.getY() * alpha);
         retval.colY.setY(this.colZ.getY() * alpha);
+        retval.colY.setY(this.colW.getY() * alpha);
         retval.colZ.setY(this.colX.getZ() * alpha);
         retval.colZ.setY(this.colY.getZ() * alpha);
         retval.colZ.setY(this.colZ.getZ() * alpha);
+        retval.colZ.setY(this.colW.getZ() * alpha);
+        retval.colW.setY(this.colX.getZ() * alpha);
+        retval.colW.setY(this.colY.getZ() * alpha);
+        retval.colW.setY(this.colZ.getZ() * alpha);
+        retval.colW.setY(this.colW.getZ() * alpha);
         return retval;
     }
 
     // multiplicacion vector columna
     public VecR4 mul(VecR4 v){
         VecR4 retval =  new VecR4();
-        //          cx cy  cz             cx
-        // dado A  | 1  2  3 |  dado b  |  1  |  x
-        //         | 2  3  4 |          |  0  |  y
-        //         | 4  5  6 |          |  3  |  Z
-        //           x  y  z
-        //   retval:
-        //   |   a.fx.dot(b.cx)  |
-        //   |   a.fy.dot(b.cx)  |
-        //   |   a.fz.dot(b.cx)  |
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   cz es colZ
-        //   x es   getX , setX
-        //   y es   getY , setY
-        //   z es   getZ , setZ
         retval.setX(v.dotProduct(this.getFilaX()));
         retval.setY(v.dotProduct(this.getFilaY()));
         retval.setZ(v.dotProduct(this.getFilaZ()));
+        retval.setW(v.dotProduct(this.getFilaW()));
         return retval;
 
     }
@@ -245,36 +185,23 @@ public class Mat4x4 {
     // multiplicacion por matriz
     public Mat4x4 mul (Mat4x4 b){
         Mat4x4 retval =  new Mat4x4();
-        //          cx cy  cz              cx cy cz
-        // dado A  | 1  2  3 |  dado b  |  1  1  1 |  x
-        //         | 2  3  4 |          |  0  0  0 |  y
-        //         | 4  5  6 |          |  3  3  3 |  Z
-        //           x  y  z
-        //   retval:
-        //   |   a.fx.dot(b.cx)   a.fx.dot(b.cy)   a.fx.dot(b.cz)|
-        //   |   a.fy.dot(b.cx)   a.fy.dot(b.cy)   a.fy.dot(b.cz)|
-        //   |   a.fz.dot(b.cx)   a.fz.dot(b.cy)   a.fz.dot(b.cz)|
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   cz es colZ
-        //   x es   getX , setX
-        //   y es   getY , setY
-        //   z es   getZ , setZ
         retval.colX.setX(this.getFilaX().dotProduct(b.colX));
         retval.colY.setX(this.getFilaX().dotProduct(b.colY));
         retval.colZ.setX(this.getFilaX().dotProduct(b.colZ));
+        retval.colW.setX(this.getFilaX().dotProduct(b.colW));
         retval.colX.setY(this.getFilaY().dotProduct(b.colX));
         retval.colY.setY(this.getFilaY().dotProduct(b.colY));
         retval.colZ.setY(this.getFilaY().dotProduct(b.colZ));
+        retval.colW.setY(this.getFilaY().dotProduct(b.colW));
         retval.colX.setZ(this.getFilaZ().dotProduct(b.colX));
         retval.colY.setZ(this.getFilaZ().dotProduct(b.colY));
         retval.colZ.setZ(this.getFilaZ().dotProduct(b.colZ));
-
+        retval.colW.setZ(this.getFilaZ().dotProduct(b.colW));
+        retval.colX.setW(this.getFilaW().dotProduct(b.colX));
+        retval.colY.setW(this.getFilaW().dotProduct(b.colY));
+        retval.colZ.setW(this.getFilaW().dotProduct(b.colZ));
+        retval.colW.setW(this.getFilaW().dotProduct(b.colW));
         return retval;
     }
-
 
 }
