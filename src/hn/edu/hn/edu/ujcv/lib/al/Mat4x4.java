@@ -143,12 +143,19 @@ public class Mat4x4 {
         retval.colX.setX(this.colX.getX() + b.colX.getX());
         retval.colX.setY(this.colX.getY() + b.colX.getY());
         retval.colX.setZ(this.colX.getZ() + b.colX.getZ());
+        retval.colX.setZ(this.colX.getW() + b.colX.getW());
         retval.colY.setX(this.colY.getX() + b.colY.getX());
         retval.colY.setY(this.colY.getY() + b.colY.getY());
         retval.colY.setY(this.colY.getZ() + b.colY.getZ());
+        retval.colY.setY(this.colY.getW() + b.colY.getW());
         retval.colZ.setX(this.colZ.getX() + b.colZ.getX());
         retval.colZ.setY(this.colZ.getY() + b.colZ.getY());
         retval.colZ.setY(this.colZ.getZ() + b.colZ.getZ());
+        retval.colZ.setY(this.colZ.getW() + b.colZ.getW());
+        retval.colW.setX(this.colW.getX() + b.colW.getX());
+        retval.colW.setY(this.colW.getY() + b.colW.getY());
+        retval.colW.setY(this.colW.getZ() + b.colW.getZ());
+        retval.colW.setY(this.colW.getW() + b.colW.getW());
         return retval;
     }
     // resta
@@ -173,15 +180,23 @@ public class Mat4x4 {
         //   y es   getY , setY
         //   z es   getZ , setZ
 
+
         retval.colX.setX(this.colX.getX() - b.colX.getX());
         retval.colX.setY(this.colX.getY() - b.colX.getY());
         retval.colX.setZ(this.colX.getZ() - b.colX.getZ());
+        retval.colX.setZ(this.colX.getW() - b.colX.getW());
         retval.colY.setX(this.colY.getX() - b.colY.getX());
         retval.colY.setY(this.colY.getY() - b.colY.getY());
         retval.colY.setY(this.colY.getZ() - b.colY.getZ());
+        retval.colY.setY(this.colY.getW() - b.colY.getW());
         retval.colZ.setX(this.colZ.getX() - b.colZ.getX());
         retval.colZ.setY(this.colZ.getY() - b.colZ.getY());
         retval.colZ.setY(this.colZ.getZ() - b.colZ.getZ());
+        retval.colZ.setY(this.colZ.getW() - b.colZ.getW());
+        retval.colW.setX(this.colW.getX() - b.colW.getX());
+        retval.colW.setY(this.colW.getY() - b.colW.getY());
+        retval.colW.setY(this.colW.getZ() - b.colW.getZ());
+        retval.colW.setY(this.colW.getW() - b.colW.getW());
         return retval;
     }
     // multiplicacion escalar
