@@ -127,7 +127,7 @@ public class Mat2x2 {
     }
 
     //multiplicacion vector columna
-    public Mat2x2 mul (Mat2x2 v){
+    public VecR2 mul (VecR2 v){
        VecR2 retval =  new VecR2();
         //            cx cy              cx
         // dado A   x| 1  2 |  dado b  |  1  | fx
@@ -143,10 +143,9 @@ public class Mat2x2 {
         //   cy es colY
         //   x es   getX , setX
         //   y es   getY , setY
-        retval = colX.setX(this.getFilaX() * );
-        //retval.colX.setX(this.getFilaX().dotProduct(b.colX));
-        //retval.colX.setY(this.getFilaY().dotProduct(b.colX));
-        return new ();
+        retval.setX(v.dotProduct(this.getFilaX()));
+        retval.setY(v.dotProduct(this.getFilaY()));
+        return retval;
 
     }
     // multiplicacion por matriz
