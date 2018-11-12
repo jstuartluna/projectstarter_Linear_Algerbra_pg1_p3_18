@@ -16,28 +16,33 @@ public class Mat2x2 {
     private VecR2 colY;
 
 
-    //
     public Mat2x2(){
         colX = new VecR2(1, 0);
-        colY = new VecR2(0,1);
+        colY = new VecR2(0, 1);
     }
 
 
     public VecR2 getColX() {
+
         return colX;
     }
 
     public void setColX(VecR2 colX) {
+
         this.colX = colX;
     }
 
     public VecR2 getColY() {
+
         return colY;
     }
 
     public void setColY(VecR2 colY) {
+
         this.colY = colY;
     }
+
+
 
     public VecR2 getFilaX(){
         VecR2 retval = new VecR2(colX.getX(),colY.getX());
@@ -91,9 +96,9 @@ public class Mat2x2 {
     // resta
     public Mat2x2 resta (Mat2x2 b){
         Mat2x2 retval = new Mat2x2();
-        //            cx cy              cx cy
+        //           cx cy              cx cy
         // dado A  | 1  2 |  dado b  |  1  1 | x
-        //          | 2  3 |          |  0  0 |  y
+        //         | 2  3 |          |  0  0 | y
         //
         //   retval:
         //   |  a.cx.x - b.cx.x     a.cy.x -  b.cy.x |
@@ -121,9 +126,28 @@ public class Mat2x2 {
         return  new Mat2x2();
     }
 
-    // multiplicacion vector columna
-    public VecR2 mul(VecR2 v){
-        return new VecR2();
+    //multiplicacion vector columna
+    public Mat2x2 mul (Mat2x2 v){
+       VecR2 retval =  new VecR2();
+        //            cx cy              cx
+        // dado A   x| 1  2 |  dado b  |  1  | fx
+        //          y| 2  3 |          |  0  | fy
+        //             x  y
+        //   retval:
+        //   |   a.fx.dot(b.cx)   |
+        //   |   a.fy.dot(b.cx)   |
+        //
+        //   a es this.
+        //   b es b
+        //   cx es colX
+        //   cy es colY
+        //   x es   getX , setX
+        //   y es   getY , setY
+        retval = colX.setX(this.getFilaX() * );
+        //retval.colX.setX(this.getFilaX().dotProduct(b.colX));
+        //retval.colX.setY(this.getFilaY().dotProduct(b.colX));
+        return new ();
+
     }
     // multiplicacion por matriz
     public Mat2x2 mul (Mat2x2 b){
@@ -143,10 +167,11 @@ public class Mat2x2 {
         //   x es   getX , setX
         //   y es   getY , setY
         retval.colX.setX(this.getFilaX().dotProduct(b.colX));
-        retval.colX.setY(this.getFilaY().dotProduct(b.colX));
         retval.colY.setX(this.getFilaX().dotProduct(b.colY));
+        retval.colX.setY(this.getFilaY().dotProduct(b.colX));
         retval.colY.setY(this.getFilaY().dotProduct(b.colY));
 
         return retval;
     }
+
 }

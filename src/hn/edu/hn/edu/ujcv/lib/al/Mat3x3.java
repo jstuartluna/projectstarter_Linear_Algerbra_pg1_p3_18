@@ -172,6 +172,7 @@ public class Mat3x3 {
     public VecR3 mul(VecR3 v){
         return new VecR3();
     }
+
     // multiplicacion por matriz
     public Mat3x3 mul (Mat3x3 b){
         Mat3x3 retval =  new Mat3x3();
