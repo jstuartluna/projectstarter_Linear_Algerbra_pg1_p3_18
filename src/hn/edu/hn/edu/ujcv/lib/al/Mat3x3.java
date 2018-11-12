@@ -170,7 +170,30 @@ public class Mat3x3 {
 
     // multiplicacion vector columna
     public VecR3 mul(VecR3 v){
-        return new VecR3();
+        VecR3 retval =  new VecR3();
+        //          cx cy  cz             cx
+        // dado A  | 1  2  3 |  dado b  |  1  |  x
+        //         | 2  3  4 |          |  0  |  y
+        //         | 4  5  6 |          |  3  |  Z
+        //           x  y  z
+        //   retval:
+        //   |   a.fx.dot(b.cx)  |
+        //   |   a.fy.dot(b.cx)  |
+        //   |   a.fz.dot(b.cx)  |
+        //
+        //   a es this.
+        //   b es b
+        //   cx es colX
+        //   cy es colY
+        //   cz es colZ
+        //   x es   getX , setX
+        //   y es   getY , setY
+        //   z es   getZ , setZ
+        retval.setX(v.dotProduct(this.getFilaX()));
+        retval.setY(v.dotProduct(this.getFilaY()));
+        retval.setZ(v.dotProduct(this.getFilaZ()));
+        return retval;
+
     }
 
     // multiplicacion por matriz
