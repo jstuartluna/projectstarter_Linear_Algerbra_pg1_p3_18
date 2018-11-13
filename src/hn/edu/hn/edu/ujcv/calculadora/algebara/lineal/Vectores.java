@@ -43,12 +43,12 @@ public class Vectores {
                 //vectores opciones
                 break;
 
-            int opcion_vec2 = lt.leerEntero("Ingrese una opcion valida","Intente de nuevo");
+            //int opcion_vec2 = lt.leerEntero("Ingrese una opcion valida","Intente de nuevo");
 
-            switch (opcion_vec){
+            //switch (opcion_vec){
 
 
-                }
+               // }
 
             case 2:
                 System.out.println("Bienvenido a las matrices");
