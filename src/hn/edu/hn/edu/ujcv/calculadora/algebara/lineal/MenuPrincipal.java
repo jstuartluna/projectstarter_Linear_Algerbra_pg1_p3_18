@@ -28,14 +28,23 @@ public class MenuPrincipal {
 
     }
 
-    public void switch_opcion(int opciones) {
+    public void menu_principal() {
 
 
         switch (opciones) {
             case 1:
                 System.out.println("Bienvenido a los vectores");
-                System.out.println("\t 1. Vectores");
-                System.out.println("\t 2. Matrices");
+                //vectores opciones
+                break;
+
+            case 2:
+                System.out.println("Bienvenido a las matrices");
+                //matrices opciones
+                break;
+
+            case 3:
+                System.out.println("Gracias, hasta pronto");
+                break;
         }
 
     }
