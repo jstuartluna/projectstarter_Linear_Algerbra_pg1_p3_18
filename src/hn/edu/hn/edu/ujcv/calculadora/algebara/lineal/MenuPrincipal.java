@@ -16,7 +16,7 @@ public class MenuPrincipal {
         System.out.println("");
         System.out.println("Presione 1 para Vectores");
         System.out.println("Presione 2 para Matrices");
-        System.out.println("Presione Opcion 3 para termiar el programa");
+        System.out.println("Presione 3 para terminar el programa");
 
     }
 
@@ -35,8 +35,7 @@ public class MenuPrincipal {
                 break;
 
             case 2:
-
-
+                matrices.menumat();
                 break;
 
             case 3:

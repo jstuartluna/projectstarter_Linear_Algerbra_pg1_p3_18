@@ -55,15 +55,13 @@ public class Mat2x2 {
 
     public Mat2x2 suma (Mat2x2 b){
          Mat2x2 retval = new Mat2x2();
-
-        retval.colX.setX(this.colX.getX() + b.colX.getX());
+         retval.colX.setX(this.colX.getX() + b.colX.getX());
         retval.colX.setY(this.colX.getY() + b.colX.getY());
         retval.colY.setX(this.colY.getX() + b.colY.getX());
         retval.colY.setY(this.colY.getY() + b.colY.getY());
-
-
-         return retval;
+    return retval;
     }
+
     // resta
     public Mat2x2 resta (Mat2x2 b){
         Mat2x2 retval = new Mat2x2();
