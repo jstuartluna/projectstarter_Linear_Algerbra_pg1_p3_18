@@ -1,5 +1,7 @@
 package hn.edu.hn.edu.ujcv.lib.al;
 
+import hn.edu.hn.edu.ujcv.lib.al.VecR2;
+
 public class Mat2x2 {
 
     private VecR2 colX;
@@ -10,7 +12,6 @@ public class Mat2x2 {
         colX = new VecR2(1, 0);
         colY = new VecR2(0, 1);
     }
-
 
     public VecR2 getColX() {
 
@@ -56,9 +57,9 @@ public class Mat2x2 {
     public Mat2x2 suma (Mat2x2 b){
          Mat2x2 retval = new Mat2x2();
          retval.colX.setX(this.colX.getX() + b.colX.getX());
-        retval.colX.setY(this.colX.getY() + b.colX.getY());
-        retval.colY.setX(this.colY.getX() + b.colY.getX());
-        retval.colY.setY(this.colY.getY() + b.colY.getY());
+         retval.colX.setY(this.colX.getY() + b.colX.getY());
+         retval.colY.setX(this.colY.getX() + b.colY.getX());
+         retval.colY.setY(this.colY.getY() + b.colY.getY());
     return retval;
     }
 

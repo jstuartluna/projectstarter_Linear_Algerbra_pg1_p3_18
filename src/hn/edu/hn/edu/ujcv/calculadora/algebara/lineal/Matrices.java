@@ -5,7 +5,6 @@ import hn.edu.hn.edu.ujcv.lib.al.VecR2;
 import hn.edu.ujcv.util.LectorTeclado;
 
 public class Matrices {
-    int j;
     LectorTeclado lt = LectorTeclado.getInstance();
 
     public void menumat() {
@@ -34,7 +33,7 @@ public class Matrices {
                     case 1: {
                         Mat2x2 mata1 = Mat2a();
                         Mat2x2 matb1 = Mat2b();
-                        Mat2x2 res1 = mata1.suma(matb1);
+                        Mat2x2 res1 = mata1.resta(matb1);
                         resMat2c(res1);
                     }
 
@@ -43,8 +42,8 @@ public class Matrices {
     }
 
     public Mat2x2 Mat2a() {
-        VecR2 colx = new VecR2(1,0);
-        VecR2 coly = new VecR2(0,1);
+        VecR2 colx = new VecR2();
+        VecR2 coly = new VecR2();
         colx.setX(lt.leerEntero("Ingresar el numero de la matriz a en la posicion (1,1)", "Favor intentar de nuevo"));
         colx.setY(lt.leerEntero("Ingresar el numero de la matriz a en la posicion (1,2)", "Favor intentar de nuevo"));
         coly.setX(lt.leerEntero("Ingresar el numero de la matriz a en la posicion (2,1)", "Favor intentar de nuevo"));
@@ -53,8 +52,8 @@ public class Matrices {
     }
 
     public Mat2x2 Mat2b() {
-        VecR2 colx = new VecR2(1,0);
-        VecR2 coly = new VecR2(0,1);
+        VecR2 colx = new VecR2();
+        VecR2 coly = new VecR2();
         colx.setX(lt.leerEntero("Ingresar el numero de la matriz b en la posicion (1,1)", "Favor intentar de nuevo"));
         colx.setY(lt.leerEntero("Ingresar el numero de la matriz b en la posicion (1,2)", "Favor intentar de nuevo"));
         coly.setX(lt.leerEntero("Ingresar el numero de la matriz b en la posicion (2,1)", "Favor intentar de nuevo"));
@@ -63,8 +62,8 @@ public class Matrices {
     }
 
     public void resMat2c(Mat2x2 c) {
-        System.out.println("|" + c.getFilaX().getX() + "  " + c.getFilaX().getY() + "|");
-        System.out.println("|" + c.getFilaY().getX() + "  " + c.getFilaY().getY() + "|");
+        System.out.println();
     }
-    
+
 }
+
