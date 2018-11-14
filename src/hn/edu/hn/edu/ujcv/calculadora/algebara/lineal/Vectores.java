@@ -12,14 +12,14 @@ public class Vectores {
 
     LectorTeclado lt = LectorTeclado.getInstance();
 
-    public int menu() {
+    public void menu() {
         int opcion_vec;
         System.out.println("Bienvenido a los vectores");
         System.out.println("");
         System.out.println("Presione 1 para Vectores en R2");
         System.out.println("Presione 2 para Vectores en R3");
         System.out.println("Presione 3 para Vectores en R4");
-        System.out.println("Presione Opcion 4 para regresar al menu principal");
+        System.out.println("Presione 4 para regresar al menu principal");
         opcion_vec = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
 
 
@@ -31,7 +31,7 @@ public class Vectores {
                 System.out.println(" 3.  para Producto Punto");
                 System.out.println(" 4.  para Multiplicacion por un escalar");
                 System.out.println(" 5.  para Division por un escalar");
-                System.out.println(" 6.  para Regresar al menu de vectores");
+                System.out.println(" 6.  para Regresar al menu Principal");
 
                 int opcion_vec2 = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
 
@@ -85,11 +85,11 @@ public class Vectores {
                         break;
                         }
                     case 6:{
-                        System.out.println("Has regresado al menu de vectores");
+                        System.out.println("Has regresado al menu de Principal");
                         break;
                     }
                     }
-                    return opcion_vec;
+                    return;
             case 2:{
                 System.out.println("Escoja el tipo de operacion a realizar con vectores en R3");
                 System.out.println(" 1.  para Suma");
@@ -98,7 +98,7 @@ public class Vectores {
                 System.out.println(" 4.  para Multiplicacion por un escalar");
                 System.out.println(" 5.  para Division por un escalar");
                 System.out.println(" 6.  para Producto Cruz");
-                System.out.println(" 7.  para Regresar al menu de Vectores");
+                System.out.println(" 7.  para Regresar al menu Principal");
 
                 int opcion_vec3 = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
 
@@ -161,11 +161,11 @@ public class Vectores {
                         break;
                     }
                     case 7:{
-                        System.out.println("Has regresado al menu de vectores");
+                        System.out.println("Has regresado al menu Principal");
                         break;
                     }
                 }
-                return opcion_vec;
+                return;
 
             }
             case 3:{
@@ -175,7 +175,7 @@ public class Vectores {
                 System.out.println(" 3.  para Producto Punto");
                 System.out.println(" 4.  para Multiplicacion por un escalar");
                 System.out.println(" 5.  para Division por un escalar");
-                System.out.println(" 6.  para Regresar al menu de Vectores");
+                System.out.println(" 6.  para Regresar al menu Principal");
 
                 int opcion_vec4 = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
 
@@ -229,11 +229,11 @@ public class Vectores {
                         break;
                     }
                     case 6:{
-                        System.out.println("Has regresado al menu de vectores");
+                        System.out.println("Has regresado al menu Principal");
                         break;
                     }
                 }
-                return opcion_vec;
+                return;
 
             }
             case 4:{
@@ -243,7 +243,7 @@ public class Vectores {
 
         }
 
-        return opcion_vec;
+        return;
     }
 
 

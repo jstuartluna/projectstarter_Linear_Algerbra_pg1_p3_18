@@ -2,16 +2,6 @@ package hn.edu.hn.edu.ujcv.lib.al;
 
 public class Mat2x2 {
 
-    //double[][] arr;
-
-    //double m11;  double m12;
-    //double m21;  double m22;
-
-
-    // principios de la contencion
-    // 1. miembros de la clase privados
-    // 2. constructor.
-    // 3. accesores y mutadores (a.k.a. geters y seters)
     private VecR2 colX;
     private VecR2 colY;
 
@@ -43,7 +33,6 @@ public class Mat2x2 {
     }
 
 
-
     public VecR2 getFilaX(){
         VecR2 retval = new VecR2(colX.getX(),colY.getX());
         return retval;
@@ -64,26 +53,8 @@ public class Mat2x2 {
         this.colY.setY(filaY.getY());
     }
 
-    // este contrato debe estar en las demas matrices
-    // y no debe variar mas que en la dimencion de los objetos
-    // retornados y recibidos.
-    // suma
     public Mat2x2 suma (Mat2x2 b){
          Mat2x2 retval = new Mat2x2();
-        //            cx cy              cx cy
-         // dado A  | 1  2 |  dado b  |  1  1 | x
-        //          | 2  3 |          |  0  0 |  y
-        //
-        //   retval:
-        //   |  a.cx.x + b.cx.x     a.cy.x +  b.cy.x |
-        //   |  a.cx.y + b.cx.y     a.cy.y + b.cy.y  |
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   x es   getX , setX
-        //   y es   getY , setY
 
         retval.colX.setX(this.colX.getX() + b.colX.getX());
         retval.colX.setY(this.colX.getY() + b.colX.getY());
@@ -96,20 +67,7 @@ public class Mat2x2 {
     // resta
     public Mat2x2 resta (Mat2x2 b){
         Mat2x2 retval = new Mat2x2();
-        //           cx cy              cx cy
-        // dado A  | 1  2 |  dado b  |  1  1 | x
-        //         | 2  3 |          |  0  0 | y
-        //
-        //   retval:
-        //   |  a.cx.x - b.cx.x     a.cy.x -  b.cy.x |
-        //   |  a.cx.y - b.cx.y     a.cy.y - b.cy.y  |
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   x es   getX , setX
-        //   y es   getY , setY
+
         retval.colX.setX(this.colX.getX() - b.colX.getX());
         retval.colX.setY(this.colX.getY() - b.colX.getY());
         retval.colY.setX(this.colY.getX() - b.colY.getX());
@@ -129,42 +87,17 @@ public class Mat2x2 {
     //multiplicacion vector columna
     public VecR2 mul (VecR2 v){
        VecR2 retval =  new VecR2();
-        //            cx cy              cx
-        // dado A   x| 1  2 |  dado b  |  1  | fx
-        //          y| 2  3 |          |  0  | fy
-        //             x  y
-        //   retval:
-        //   |   a.fx.dot(b.cx)   |
-        //   |   a.fy.dot(b.cx)   |
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   x es   getX , setX
-        //   y es   getY , setY
+
         retval.setX(v.dotProduct(this.getFilaX()));
         retval.setY(v.dotProduct(this.getFilaY()));
         return retval;
 
     }
+
     // multiplicacion por matriz
     public Mat2x2 mul (Mat2x2 b){
         Mat2x2 retval =  new Mat2x2();
-        //            cx cy              cx cy
-         // dado A  x| 1  2 |  dado b  |  1  1 | fx
-        //          y| 2  3 |          |  0  0 | fy
-        //             x  y
-        //   retval:
-        //   |   a.fx.dot(b.cx)   a.fx.dot(b.cy) |
-        //   |   a.fy.dot(b.cx)   a.fy.dot(b.cy) |
-        //
-        //   a es this.
-        //   b es b
-        //   cx es colX
-        //   cy es colY
-        //   x es   getX , setX
-        //   y es   getY , setY
+
         retval.colX.setX(this.getFilaX().dotProduct(b.colX));
         retval.colY.setX(this.getFilaX().dotProduct(b.colY));
         retval.colX.setY(this.getFilaY().dotProduct(b.colX));
