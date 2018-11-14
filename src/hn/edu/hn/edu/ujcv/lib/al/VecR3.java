@@ -74,14 +74,6 @@ public class VecR3 {
         return retval;
     }
 
-        public VecR3 div (VecR3 b){
-            VecR3 retval = new VecR3();
-            retval.setX(this.x / b.x);
-            retval.setY(this.y / b.y);
-            retval.setZ(this.z / b.z);
-            return retval;
-
-        }
 
 
     public VecR3() {
