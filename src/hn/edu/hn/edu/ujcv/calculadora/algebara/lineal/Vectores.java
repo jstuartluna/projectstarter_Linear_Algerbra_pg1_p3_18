@@ -37,6 +37,7 @@ public class Vectores {
                 System.out.println(" 3.  para Producto Punto");
                 System.out.println(" 4.  para Multiplicacion por un escalar");
                 System.out.println(" 5.  para Division por un escalar");
+                System.out.println(" 6.  para Regresar al menu de vectores");
 
                 int opcion_vec2 = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
 
@@ -87,7 +88,81 @@ public class Vectores {
                         resultadovecr2(res6);
                         break;
                         }
+                    case 6:{
+                        System.out.println("Has regresado al menu de vectores");
+                        break;
                     }
+                    }
+                    return opcion_vec;
+            case 2:{
+                System.out.println("Escoja el tipo de operacion a realizar con vectores en R3");
+                System.out.println(" 1.  para Suma");
+                System.out.println(" 2.  para Resta");
+                System.out.println(" 3.  para Producto Punto");
+                System.out.println(" 4.  para Multiplicacion por un escalar");
+                System.out.println(" 5.  para Division por un escalar");
+                System.out.println(" 5.  para Producto Cruz");
+                System.out.println(" 6.  para Regresar al menu de Vectores");
+
+                int opcion_vec3 = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
+
+                switch (opcion_vec3) {
+
+                    case 1: {VecR3 a1 = VectorR3a();
+                        VecR3 b1 = VectorR3b();
+                        VecR3 res1 = a1.add(b1);
+                        mostrarvec1r3(a1);
+                        mostrarvec2r3(b1);
+                        resultadovecr3(res1);
+                        break;}
+                    case 2:{
+                        VecR3 a2 = VectorR3a();
+                        VecR3 b2 = VectorR3b();
+                        VecR3 res2 = a2.sub(b2);
+                        mostrarvec1r3(a2);
+                        mostrarvec2r3(b2);
+                        resultadovecr3(res2);
+                        break;
+                    }
+                    case 3:{
+                        VecR3 a5 = VectorR3a();
+                        VecR3 b5 = VectorR3b();
+                        mostrarvec1r3(a5);
+                        mostrarvec2r3(b5);
+                        double res5 = a5.dotProduct(b5);
+                        System.out.println("El producto punto es: \n" + res5);
+                        break;
+                    }
+                    case 4:{
+                        double alpha1;
+                        alpha1 = lt.leerReal("Ingrese el escalar", "Error! Ha ingresado un caracter no valido");
+                        VecR3 a6 = VectorR3a();
+                        VecR3 res6 = a6.mul(alpha1);
+                        System.out.println("El escalar es \n" + alpha1);
+                        mostrarvec1r3(a6);
+                        resultadovecr3(res6);
+                        break;
+                    }
+                    case 5: {
+                        double alpha1;
+                        alpha1 = lt.leerReal("Ingrese el escalar", "Error! Ha ingresado un caracter no valido");
+                        VecR3 a6 = VectorR3a();
+                        VecR3 res6 = a6.mul(alpha1);
+                        System.out.println("El escalar es \n" + alpha1);
+                        mostrarvec1r3(a6);
+                        resultadovecr3(res6);
+                        break;
+                    }
+                    case 6:{
+                        System.out.println("Has regresado al menu de vectores");
+                        break;
+                    }
+                }
+                return opcion_vec;
+
+
+
+            }
 
         }
 
@@ -159,17 +234,16 @@ public class Vectores {
 
     }
 
-    /*public void mostrarvec1r3 (VecR3 a){
-        System.out.println("El vector a es:\n" + "{ " + a.getX() + " , " + a.getY() + " , " + a.getW() +" } ");
+    public void mostrarvec1r3 (VecR3 a){
+        System.out.println("El vector a es:\n" + "{ " + a.getX() + " , " + a.getY() + " , " + a.getZ() +" } ");
     }
 
     public void mostrarvec2r3 (VecR3 b){
-        System.out.println("El vector b es:\n" + "{ " + b.getX() + " , " + b.getY() +" } ");
+        System.out.println("El vector b es:\n" + "{ " + b.getX() + " , " + b.getY() +" , " + b.getZ() +" } ");
     }
 
     public void resultadovecr3 (VecR3 c){
-        System.out.println("La suma de los dos vectores es: \n" + "{ " + c.getX() + " , " + c.getY() +" } ");
+        System.out.println("La suma de los dos vectores es: \n" + "{ " + c.getX() + " , " + c.getY() + " , " + c.getZ() +" } ");
 
-    }*/
-
+    }
 }
