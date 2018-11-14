@@ -15,17 +15,17 @@ public class Vectores {
     public int vec_R3;
     public int vec_R4;
 
-    LectorTeclado lt = new LectorTeclado();
-    Operaciones_Vectores operaciones_vectores = new Operaciones_Vectores();
 
-    public void menu() {
+    LectorTeclado lt = LectorTeclado.getInstance();
+
+    public int menu() {
         int opcion_vec;
         System.out.println("Bienvenido a los vectores");
         System.out.println("");
         System.out.println("Presione 1 para Vectores en R2");
         System.out.println("Presione 2 para Vectores en R3");
         System.out.println("Presione 3 para Vectores en R4");
-        System.out.println("Presione Opcion 3 para regresar");
+        System.out.println("Presione Opcion 4 para regresar");
         opcion_vec = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
 
 
@@ -34,89 +34,142 @@ public class Vectores {
                 System.out.println("Escoja el tipo de operacion a realizar con vectores en R2");
                 System.out.println(" 1.  para Suma");
                 System.out.println(" 2.  para Resta");
-                System.out.println(" 3.  para Multiplicacion");
-                System.out.println(" 4.  para Division");
-                System.out.println(" 5.  para Producto Punto");
-                System.out.println(" 3.  para Multiplicacion por un escalar");
-                System.out.println(" 4.  para Division por un escalar");
+                System.out.println(" 3.  para Producto Punto");
+                System.out.println(" 4.  para Multiplicacion por un escalar");
+                System.out.println(" 5.  para Division por un escalar");
 
                 int opcion_vec2 = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
 
-                switch (opcion_vec2){
-                    case 1: {
-                    }
-                        VecR2 a= new VecR2();
-                        VecR2 b= new VecR2();
-                        VecR2 res= a.add(b);
-                        System.out.println("La suma de los dos vectores es: " + res );
-                        break;
-                    }
-                    case 2: {
-                        VecR2 a= new VecR2();
-                        VecR2 b= new VecR2();
-                        VecR2 res= a.sub(b);
-                        System.out.println("x." + res.getX() + " y. " + res.getY() );
-                        break;
-                    }
-                    case 3: {
-                        VecR2 a= new VecR2();
-                        VecR2 b= new VecR2();
-                        VecR2 res= a.mul(b);
-                        System.out.println("x." + res.getX() + " y. " + res.getY() );
-                        break;
-                    }
-                    case 4: {
-                        VecR2 a= new VecR2();
-                        VecR2 b= new VecR2();
-                        VecR2 res= a.div(b);
-                        System.out.println("x." + res.getX() + " y. " + res.getY() );
-                        break;
-                    }
-                    case 5: {
-                        VecR2 a= new VecR2();
-                        VecR2 b= new VecR2();
-                        double res= a.dotProduct(b);
-                        System.out.println("El producto punto es:" + res );
-                        break;
-                    }
-                     case 6: {
-                        VecR2 a= new VecR2();
-                        VecR2 b= new VecR2();
-                        VecR2 res= a.div(b);
-                        System.out.println("x." + res.getX() + " y. " + res.getY() );
+                switch (opcion_vec2) {
+
+                    case 1: {VecR2 a1 = VectorR2a();
+                        VecR2 b1 = VectorR2b();
+                        VecR2 res1 = a1.add(b1);
+                        mostrarvec1r2(a1);
+                        mostrarvec2r2(b1);
+                        resultadovecr2(res1);
+                        break;}
+                    case 2:{
+                        VecR2 a2 = VectorR2a();
+                        VecR2 b2 = VectorR2b();
+                        VecR2 res2 = a2.sub(b2);
+                        mostrarvec1r2(a2);
+                        mostrarvec2r2(b2);
+                        resultadovecr2(res2);
                         break;
                         }
-                    case 7: {
-                        VecR2 a= new VecR2();
-                        VecR2 b= new VecR2();
-                        double res= a.dotProduct(b);
-                        System.out.println("El producto punto es:" + res );
+                    case 3:{
+                        VecR2 a5 = VectorR2a();
+                        VecR2 b5 = VectorR2b();
+                        mostrarvec1r2(a5);
+                        mostrarvec2r2(b5);
+                        double res5 = a5.dotProduct(b5);
+                        System.out.println("El producto punto es: \n" + res5);
                         break;
+                        }
+                    case 4:{
+                        double alpha1;
+                        alpha1 = lt.leerReal("Ingrese el escalar", "Error! Ha ingresado un caracter no valido");
+                        VecR2 a6 = VectorR2a();
+                        VecR2 res6 = a6.mul(alpha1);
+                            System.out.println("El escalar es \n" + alpha1);
+                        mostrarvec1r2(a6);
+                        resultadovecr2(res6);
+                        break;
+                         }
+                    case 5: {
+                        double alpha1;
+                        alpha1 = lt.leerReal("Ingrese el escalar", "Error! Ha ingresado un caracter no valido");
+                        VecR2 a6 = VectorR2a();
+                        VecR2 res6 = a6.mul(alpha1);
+                        System.out.println("El escalar es \n" + alpha1);
+                        mostrarvec1r2(a6);
+                        resultadovecr2(res6);
+                        break;
+                        }
                     }
-
-                }
-
-                return;
-
-
-           /* case 2:
-
-                break;
-
-            case 3:
-
-                break;
-
-            case 4:
-                System.out.println("Escoje una operacion (Menu Principal)");
-                break;
-
 
         }
 
-        return;*/
+        return opcion_vec;
 
     }
 
+
+
+
+    public VecR2 VectorR2a(){
+        VecR2 b = new VecR2();
+        b.setX(lt.leerReal("Ingrese el primer numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        b.setY(lt.leerReal("Ingrese el segundo numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        return new VecR2(b);
+    }
+
+    public VecR2 VectorR2b(){
+        VecR2 b = new VecR2();
+        b.setX(lt.leerReal("Ingrese el primer numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        b.setY(lt.leerReal("Ingrese el segundo numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        return new VecR2(b);
+    }
+
+
+    public VecR3 VectorR3a(){
+        VecR3 b = new VecR3();
+        b.setX(lt.leerReal("Ingrese el primer numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        b.setY(lt.leerReal("Ingrese el segundo numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        b.setZ(lt.leerReal("Ingrese el tercer numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        return new VecR3(b);
+    }
+    public VecR3 VectorR3b(){
+        VecR3 b = new VecR3();
+        b.setX(lt.leerReal("Ingrese el primer numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        b.setY(lt.leerReal("Ingrese el segundo numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        b.setZ(lt.leerReal("Ingrese el tercer numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        return new VecR3(b);
+    }
+
+    public VecR4 VectorR4a(String nombreVector, String mensaje, String mensajeError){
+        VecR4 b = new VecR4();
+        b.setX(lt.leerReal("Ingrese el primer numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        b.setY(lt.leerReal("Ingrese el segundo numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        b.setZ(lt.leerReal("Ingrese el tercer numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        b.setW(lt.leerReal("Ingrese el cuarto numero del primer vector", "Error! Ha ingresado un caracter no valido"));
+        return new VecR4(b);
+    }
+
+    public VecR4 VectorR4b(String nombreVector, String mensaje, String mensajeError){
+        VecR4 b = new VecR4();
+        b.setX(lt.leerReal("Ingrese el primer numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        b.setY(lt.leerReal("Ingrese el segundo numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        b.setZ(lt.leerReal("Ingrese el tercer numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        b.setW(lt.leerReal("Ingrese el cuarto numero del segundo vector", "Error! Ha ingresado un caracter no valido"));
+        return new VecR4(b);
+    }
+
+    public void mostrarvec1r2 (VecR2 a){
+        System.out.println("El vector a es:\n" + "{ " + a.getX() + " , " + a.getY() +" } ");
+    }
+
+    public void mostrarvec2r2 (VecR2 b){
+        System.out.println("El vector b es:\n" + "{ " + b.getX() + " , " + b.getY() +" } ");
+    }
+
+    public void resultadovecr2 (VecR2 c){
+        System.out.println("El resultado es: \n" + "{ " + c.getX() + " , " + c.getY() +" } ");
+
+    }
+
+    /*public void mostrarvec1r3 (VecR3 a){
+        System.out.println("El vector a es:\n" + "{ " + a.getX() + " , " + a.getY() + " , " + a.getW() +" } ");
+    }
+
+    public void mostrarvec2r3 (VecR3 b){
+        System.out.println("El vector b es:\n" + "{ " + b.getX() + " , " + b.getY() +" } ");
+    }
+
+    public void resultadovecr3 (VecR3 c){
+        System.out.println("La suma de los dos vectores es: \n" + "{ " + c.getX() + " , " + c.getY() +" } ");
+
+    }*/
 
 }

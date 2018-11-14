@@ -27,18 +27,16 @@ public class VecR2 {
     }
 
     public VecR2 sub(VecR2 b) {
+       // VecR2 retval = new VecR2();
+        //retval.setX(this.x - b.x);
+        //retval.setY(this.y - b.y);
+        //return retval;
         VecR2 retval = new VecR2();
-        retval.setX(this.x - b.x);
-        retval.setY(this.y - b.y);
+        retval.x = (x-b.x);
+        retval.y = (y-b.y);
         return retval;
     }
 
-    public VecR2 mul(VecR2 b) {
-        VecR2 retval = new VecR2();
-        retval.setX(this.x * b.x);
-        retval.setY(this.y * b.y);
-        return retval;
-    }
 
     public double dotProduct(VecR2 b){
         double retval;
@@ -46,12 +44,6 @@ public class VecR2 {
         return retval;
     }
 
-    public VecR2 div(VecR2 b) {
-        VecR2 retval = new VecR2();
-        retval.setX(this.x / b.x);
-        retval.setY(this.y / b.y);
-        return retval;
-    }
 
     public VecR2()
     {
