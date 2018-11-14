@@ -31,38 +31,58 @@ public class Matrices {
 
                 switch (opcion_mat2) {
                     case 1: {
-                        Mat2x2 mata1 = Mat2a();
-                        Mat2x2 matb1 = Mat2b();
-                        Mat2x2 res1 = mata1.resta(matb1);
+                        Mat2x2 mat1 = Mat2a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Favor intentar de nuevo");
+                        Mat2x2 mat2 = Mat2a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Favor intentar de nuevo");
+                        Mat2x2 res1 = mat1.suma(mat2);
                         resMat2c(res1);
+                        break;
+                    }
+                    case 2: {
+                        Mat2x2 mat1 = Mat2a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Favor intentar de nuevo");
+                        Mat2x2 mat2 = Mat2a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Favor intentar de nuevo");
+                        Mat2x2 res1 = mat1.resta(mat2);
+                        resMat2c(res1);
+                        break;
+                    }
+                    case 3: {
+                        Mat2x2 mat1 = Mat2a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Favor intentar de nuevo");
+                        Mat2x2 mat2 = Mat2a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Favor intentar de nuevo");
+                        Mat2x2 res1 = mat1.mul(mat2);
+                        resMat2c(res1);
+                        break;
+                    }
+                    case 4: {
+                        double alpha1;
+                        alpha1 = lt.leerReal("Ingrese el escalar", "Error! Ha ingresado un caracter no valido");
+                        Mat2x2 mat1 = Mat2a("Matriz A", "Ingresar el numero de la matriz a en la posicion ", "Favor intentar de nuevo");
+                        Mat2x2 res1 = mat1.mul(alpha1);
+                        resMat2c(res1);
+                        break;
+                    }
+                    case 5:{
+
                     }
 
                 }
         }
     }
 
-    public Mat2x2 Mat2a() {
-        VecR2 colx = new VecR2();
-        VecR2 coly = new VecR2();
-        colx.setX(lt.leerEntero("Ingresar el numero de la matriz a en la posicion (1,1)", "Favor intentar de nuevo"));
-        colx.setY(lt.leerEntero("Ingresar el numero de la matriz a en la posicion (1,2)", "Favor intentar de nuevo"));
-        coly.setX(lt.leerEntero("Ingresar el numero de la matriz a en la posicion (2,1)", "Favor intentar de nuevo"));
+    public Mat2x2 Mat2a(String nombrematriz, String mensaje, String mensajeerror) {
+        VecR2 colx = new VecR2(1,0);
+        VecR2 coly = new VecR2(0,1);
+        System.out.println(nombrematriz);
+        colx.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,1)", "Favor intentar de nuevo"));
+        coly.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,2)", "Favor intentar de nuevo"));
+        colx.setY(lt.leerReal("Ingresar el numero de la matriz a en la posicion (2,1)", "Favor intentar de nuevo"));
         coly.setY(lt.leerEntero("Ingresar el numero de la matriz a en la posicion (2,2)", "Favor intentar de nuevo"));
-        return new Mat2x2();
+        return new Mat2x2(colx,coly);
     }
 
-    public Mat2x2 Mat2b() {
-        VecR2 colx = new VecR2();
-        VecR2 coly = new VecR2();
-        colx.setX(lt.leerEntero("Ingresar el numero de la matriz b en la posicion (1,1)", "Favor intentar de nuevo"));
-        colx.setY(lt.leerEntero("Ingresar el numero de la matriz b en la posicion (1,2)", "Favor intentar de nuevo"));
-        coly.setX(lt.leerEntero("Ingresar el numero de la matriz b en la posicion (2,1)", "Favor intentar de nuevo"));
-        coly.setY(lt.leerEntero("Ingresar el numero de la matriz b en la posicion (2,2)", "Favor intentar de nuevo"));
-        return new Mat2x2();
-    }
 
     public void resMat2c(Mat2x2 c) {
-        System.out.println();
+        System.out.println( "| " +c.getColX().getX() + " " + c.getColY().getX() + " |");
+        System.out.println( "| " +c.getColX().getY() + " " + c.getColY().getY() + " |");
+
     }
 
 }

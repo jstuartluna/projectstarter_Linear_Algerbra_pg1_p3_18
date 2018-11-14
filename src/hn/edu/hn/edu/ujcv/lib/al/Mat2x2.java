@@ -13,6 +13,17 @@ public class Mat2x2 {
         colY = new VecR2(0, 1);
     }
 
+    public Mat2x2(VecR2 colX ,VecR2 colY){
+        this.colX = new VecR2(colX);
+        this.colY = new VecR2(colY);
+    }
+
+    public Mat2x2(Mat2x2 b){
+        this.colX = new VecR2(b.colX);
+        this.colY = new VecR2(b.colY);
+    }
+
+
     public VecR2 getColX() {
 
         return colX;
