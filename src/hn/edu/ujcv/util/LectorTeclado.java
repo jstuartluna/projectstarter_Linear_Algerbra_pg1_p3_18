@@ -27,4 +27,24 @@ public class LectorTeclado {
         retval = mSc.nextInt();
         return retval;
     }
+
+    private static LectorTeclado instance;
+    public static LectorTeclado getInstance(){
+        if(instance==null){
+            instance = new LectorTeclado();
+        }
+        return instance;
+    }
+
+
+    public double leerReal(String mensaje, String mensajeError) {
+        double retval = 0;
+        System.out.println(mensaje);
+        while (!mSc.hasNextDouble()) {
+            mSc.nextLine();
+            System.out.println(mensajeError);
+        }
+        retval = mSc.nextDouble();
+        return retval;
+    }
 }

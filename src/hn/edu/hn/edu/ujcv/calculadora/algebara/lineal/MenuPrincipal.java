@@ -5,14 +5,13 @@ import hn.edu.ujcv.util.LectorTeclado;
 public class MenuPrincipal {
 
     public int opciones;
-
-    public LectorTeclado lt = new LectorTeclado();
-
     Vectores vectores = new Vectores();
     Matrices matrices = new Matrices();
 
+    LectorTeclado lt = LectorTeclado.getInstance();
 
-    public void menu() {
+
+    public void menu2() {
         System.out.println("Bienvenido a la Calculadora de algebra lineal");
         System.out.println("");
         System.out.println("Presione 1 para Vectores");
@@ -27,18 +26,16 @@ public class MenuPrincipal {
 
     }
 
-    public void menu_principal() {
+    public void vecymat(int opciones) {
 
 
         switch (opciones) {
             case 1:
-
-
+                vectores.menu();
                 break;
 
             case 2:
-                System.out.println("Bienvenido a las matrices");
-                //matrices opciones
+
                 break;
 
             case 3:

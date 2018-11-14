@@ -48,7 +48,7 @@ public class Vectores {
                         VecR2 a= new VecR2();
                         VecR2 b= new VecR2();
                         VecR2 res= a.add(b);
-                        System.out.println("x." + res.getX() + " y. " + res.getY() );
+                        System.out.println("La suma de los dos vectores es: " + res );
                         break;
                     }
                     case 2: {
@@ -98,8 +98,8 @@ public class Vectores {
 
                 return;
 
-        
-            case 2:
+
+           /* case 2:
 
                 break;
 
@@ -114,7 +114,7 @@ public class Vectores {
 
         }
 
-        return
+        return;*/
 
     }
 
