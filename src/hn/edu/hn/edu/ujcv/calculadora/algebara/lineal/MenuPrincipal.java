@@ -23,7 +23,6 @@ public class MenuPrincipal {
 
     public int leer_opciones() {
         opciones = lt.leerEntero("Escoja una opcion", "Caracter no valido, vuelva a escoger una opcion");
-
         return opciones;
 
     }
@@ -33,8 +32,8 @@ public class MenuPrincipal {
 
         switch (opciones) {
             case 1:
-                System.out.println("Bienvenido a los vectores");
-                //vectores opciones
+
+
                 break;
 
             case 2:
