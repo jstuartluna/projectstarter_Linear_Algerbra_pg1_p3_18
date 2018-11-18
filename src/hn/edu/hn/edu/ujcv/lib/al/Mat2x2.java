@@ -85,13 +85,13 @@ public class Mat2x2 {
         return retval;
     }
     // multiplicacion escalar
-    public  Mat2x2 mul(double alpha){
+    public  Mat2x2 mul2(double alpha){
         Mat2x2 retval = new Mat2x2();
         retval.colX.setX(this.colX.getX() * alpha);
-        retval.colX.setX(this.colY.getX() * alpha);
-        retval.colY.setY(this.colX.getY() * alpha);
+        retval.colX.setY(this.colX.getY() * alpha);
+        retval.colY.setX(this.colY.getX() * alpha);
         retval.colY.setY(this.colY.getY() * alpha);
-        return  new Mat2x2();
+        return  retval;
     }
 
     //multiplicacion vector columna
