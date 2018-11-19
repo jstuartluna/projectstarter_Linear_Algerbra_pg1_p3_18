@@ -100,15 +100,15 @@ public class Matrices {
                     case 2: {
                         Mat3x3 mat1 = Mat3a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
                         Mat3x3 mat2 = Mat3a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 res1 = mat1.resta(mat2);
-                        resMat3c(res1);
+                        Mat3x3 res2 = mat1.resta(mat2);
+                        resMat3c(res2);
                         break;
                     }
                     case 3: {
                         Mat3x3 mat1 = Mat3a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
                         Mat3x3 mat2 = Mat3a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 res1 = mat1.mul(mat2);
-                        resMat3c(res1);
+                        Mat3x3 res3 = mat1.mul(mat2);
+                        resMat3c(res3);
                         break;
                     }
                     case 4: {
@@ -125,7 +125,7 @@ public class Matrices {
                         VecR3 v = new VecR3(1,0,0);
                         v.setX(lt.leerReal("Ingrese el primer numero vector","Error! Ha ingresado un caracter no valido"));
                         v.setY(lt.leerReal("Ingrese el segundo numero vector","Error! Ha ingresado un caracter no valido"));
-                        v.setZ(lt.leerReal("Ingrese el segundo numero vector","Error! Ha ingresado un caracter no valido"));
+                        v.setZ(lt.leerReal("Ingrese el tercer numero vector","Error! Ha ingresado un caracter no valido"));
                         VecR3 res5 = mat1.mul(v);
                         System.out.println("La multiplicacion de matriz por vector columna es \n" + "| "+ res5.getX()+" |" + "\n| "+ res5.getY()+" |" + "\n| "+ res5.getZ()+" |");
                         break;
@@ -158,15 +158,15 @@ public class Matrices {
                     case 2: {
                         Mat4x4 mat1 = Mat4a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
                         Mat4x4 mat2 = Mat4a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat4x4 res1 = mat1.resta(mat2);
-                        resMat4c(res1);
+                        Mat4x4 res2 = mat1.resta(mat2);
+                        resMat4c(res2);
                         break;
                     }
                     case 3: {
                         Mat4x4 mat1 = Mat4a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
                         Mat4x4 mat2 = Mat4a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat4x4 res1 = mat1.mul(mat2);
-                        resMat4c(res1);
+                        Mat4x4 res3 = mat1.mul(mat2);
+                        resMat4c(res3);
                         break;
                     }
                     case 4: {

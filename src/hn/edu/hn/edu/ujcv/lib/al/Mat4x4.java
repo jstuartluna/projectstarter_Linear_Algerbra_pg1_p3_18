@@ -70,7 +70,7 @@ public class Mat4x4 {
 
     public VecR4 getFilaX(){
 
-        VecR4 retval = new VecR4(colX.getX(),colY.getX(),colZ.getZ(),colW.getW());
+        VecR4 retval = new VecR4(colX.getX(),colY.getX(),colZ.getX(),colW.getX());
 
         return retval;
     }
@@ -104,7 +104,7 @@ public class Mat4x4 {
         this.colX.setZ(filaZ.getX());
         this.colY.setZ(filaZ.getY());
         this.colZ.setZ(filaZ.getZ());
-        this.colW.setZ(filaZ.getZ());
+        this.colW.setZ(filaZ.getW());
     }
 
     public VecR4 getFilaW(){
@@ -116,7 +116,7 @@ public class Mat4x4 {
         this.colX.setW(filaW.getX());
         this.colY.setW(filaW.getY());
         this.colZ.setW(filaW.getZ());
-        this.colW.setW(filaW.getZ());
+        this.colW.setW(filaW.getW());
     }
 
     public Mat4x4 suma (Mat4x4 b){
