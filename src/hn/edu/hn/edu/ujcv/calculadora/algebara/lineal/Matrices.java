@@ -269,7 +269,7 @@ public class Matrices {
         System.out.println( "| " +c.getColX().getX() + " " + c.getColY().getX() + " " + c.getColZ().getX() + " " + c.getColW().getX() + " |");
         System.out.println( "| " +c.getColX().getY() + " " + c.getColY().getY() + " " + c.getColZ().getY() + " " + c.getColW().getY() + " |");
         System.out.println( "| " +c.getColX().getZ() + " " + c.getColY().getZ() + " " + c.getColZ().getZ() + " " + c.getColW().getZ() + " |");
-        System.out.println( "| " +c.getColX().getW() + " " + c.getColY().getW() + " " + c.getColW().getZ() + " " + c.getColW().getW() + " |");
+        System.out.println( "| " +c.getColX().getW() + " " + c.getColY().getW() + " " + c.getColZ().getW() + " " + c.getColW().getW() + " |");
 
     }
 

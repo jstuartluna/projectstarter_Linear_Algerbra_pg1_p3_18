@@ -22,10 +22,10 @@ public class Mat4x4 {
     }
 
     public Mat4x4(Mat4x4 b){
-        this.colX = new VecR4(b.colX);
-        this.colY = new VecR4(b.colY);
-        this.colZ = new VecR4(b.colZ);
-        this.colZ = new VecR4(b.colW);
+        colX = new VecR4(b.colX);
+        colY = new VecR4(b.colY);
+        colZ = new VecR4(b.colZ);
+        colW = new VecR4(b.colW);
     }
 
     public VecR4 getColX() {
