@@ -1,21 +1,10 @@
 package hn.edu.hn.edu.ujcv.lib.al;
 
 public class Mat3x3 {
-    //double[][] arr;
 
-    //double m11;  double m12;
-    //double m21;  double m22;
-
-
-    // principios de la contencion
-    // 1. miembros de la clase privados
-    // 2. constructor.
-    // 3. accesores y mutadores (a.k.a. getters y setters)
     private VecR3 colX;
     private VecR3 colY;
     private VecR3 colZ;
-
-
 
     public Mat3x3() {
         colX = new VecR3(1, 0, 0);

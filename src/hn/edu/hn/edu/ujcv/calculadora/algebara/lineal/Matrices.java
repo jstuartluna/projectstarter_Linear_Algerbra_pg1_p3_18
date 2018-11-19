@@ -258,7 +258,7 @@ public class Matrices {
             VecR4 colx = new VecR4(1, 0, 0, 0);
             VecR4 coly = new VecR4(0, 1, 0, 0);
             VecR4 colz = new VecR4(0, 0, 1, 0);
-            VecR4 colw = new VecR4(0, 0, 0, 1);
+            VecR4 colw = new VecR4(0, 0, 0, 0);
             System.out.println(nombrematriz);
             colx.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,1)", "Error, ingrese un numero valido"));
             coly.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,2)", "Error, ingrese un numero valido"));

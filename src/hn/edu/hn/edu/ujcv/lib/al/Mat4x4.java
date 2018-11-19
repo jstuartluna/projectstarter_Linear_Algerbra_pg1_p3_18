@@ -6,18 +6,20 @@ public class Mat4x4 {
     private VecR4 colZ;
     private VecR4 colW;
 
-    public Mat4x4(){
-        colX = new VecR4(1,0,0,0);
-        colY = new VecR4(0,1,0,0);
-        colZ = new VecR4(0,0,1,0);
-        colW = new VecR4(0,0,0,1);
+    public Mat4x4() {
+        colX = new VecR4(1, 0, 0,0);
+        colY = new VecR4(0, 1, 0,0);
+        colZ = new VecR4(0, 0, 1,0);
+        colW = new VecR4(0, 0, 0,1);
+
     }
 
-    public Mat4x4(VecR4 cola, VecR4 colb, VecR4 colc, VecR4 cold){
-        this.colX = new VecR4(cola);
-        this.colY = new VecR4(colb);
-        this.colZ = new VecR4(colc);
-        this.colW = new VecR4(cold);
+    public Mat4x4(VecR4 colX ,VecR4 colY,VecR4 colZ,VecR4 colW){
+        this.colX = new VecR4(colX);
+        this.colY = new VecR4(colY);
+        this.colZ = new VecR4(colZ);
+        this.colW = new VecR4(colW);
+
     }
 
     public Mat4x4(Mat4x4 b){
@@ -26,6 +28,7 @@ public class Mat4x4 {
         colZ = new VecR4(b.colZ);
         colW = new VecR4(b.colW);
     }
+
     public VecR4 getFilaX(){
         VecR4 retval = new VecR4(colX.getX(),colY.getX(), colZ.getX(), colW.getX());
         return retval;
@@ -75,22 +78,18 @@ public class Mat4x4 {
     }
 
     public VecR4 getColX() {
-
         return colX;
     }
 
     public void setColX(VecR4 colX) {
-
         this.colX = colX;
     }
 
     public VecR4 getColY() {
-
         return colY;
     }
 
     public void setColY(VecR4 colY) {
-
         this.colY = colY;
     }
 
