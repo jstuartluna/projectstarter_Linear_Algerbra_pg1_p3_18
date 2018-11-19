@@ -23,6 +23,19 @@ public class Mat3x3 {
         colZ = new VecR3(0, 0, 1);
     }
 
+    public Mat3x3(VecR3 colX ,VecR3 colY,VecR3 colZ){
+        this.colX = new VecR3(colX);
+        this.colY = new VecR3(colY);
+        this.colZ = new VecR3(colZ);
+    }
+
+    public Mat3x3(Mat3x3 b){
+        this.colX = new VecR3(b.colX);
+        this.colY = new VecR3(b.colY);
+        this.colZ = new VecR3(b.colZ);
+    }
+
+
 
     public VecR3 getColX() {
         return colX;
