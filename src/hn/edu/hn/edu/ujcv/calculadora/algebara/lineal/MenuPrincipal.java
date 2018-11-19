@@ -12,7 +12,7 @@ public class MenuPrincipal {
 
 
     public void menu2() {
-        System.out.println("Bienvenido a la Calculadora de algebra lineal");
+        System.out.println("\n Bienvenido a la Calculadora de algebra lineal");
         System.out.println("");
         System.out.println("Presione 1 para Vectores");
         System.out.println("Presione 2 para Matrices");

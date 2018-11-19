@@ -127,7 +127,6 @@ public class Mat3x3 {
             retval.colZ.setX(this.colZ.getX() - b.colZ.getX());
             retval.colZ.setY(this.colZ.getY() - b.colZ.getY());
             retval.colZ.setZ(this.colZ.getZ() - b.colZ.getZ());
-            retval.setColX(this.colX.sub(colX));
             return retval;
         }
 

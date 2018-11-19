@@ -13,11 +13,11 @@ public class Mat4x4 {
         colW = new VecR4(0,0,0,1);
     }
 
-    public Mat4x4(VecR4 colX, VecR4 colY, VecR4 colZ, VecR4 colW){
-        this.colX = new VecR4(colX);
-        this.colY = new VecR4(colY);
-        this.colZ = new VecR4(colZ);
-        this.colW = new VecR4(colW);
+    public Mat4x4(VecR4 cola, VecR4 colb, VecR4 colc, VecR4 cold){
+        this.colX = new VecR4(cola);
+        this.colY = new VecR4(colb);
+        this.colZ = new VecR4(colc);
+        this.colW = new VecR4(cold);
     }
 
     public Mat4x4(Mat4x4 b){
@@ -59,7 +59,7 @@ public class Mat4x4 {
         this.colX.setZ(filaZ.getX());
         this.colY.setZ(filaZ.getY());
         this.colZ.setZ(filaZ.getZ());
-        this.colW.setZ(filaZ.getZ());
+        this.colW.setZ(filaZ.getW());
     }
 
     public VecR4 getFilaW(){
@@ -71,7 +71,7 @@ public class Mat4x4 {
         this.colX.setW(filaW.getX());
         this.colY.setW(filaW.getY());
         this.colZ.setW(filaW.getZ());
-        this.colW.setW(filaW.getZ());
+        this.colW.setW(filaW.getW());
     }
 
     public VecR4 getColX() {
