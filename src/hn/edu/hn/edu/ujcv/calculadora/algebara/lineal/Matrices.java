@@ -72,6 +72,10 @@ public class Matrices {
                         System.out.println("La multiplicacion de matriz por vector columna es \n" + "| "+ res5.getX()+" |" + "\n| "+ res5.getY()+" |");
                         break;
                     }
+                    case 6:{
+                        System.out.println("Has regresado al menu de Principal");
+                        break;
+                    }
 
                 }
             case 2:
@@ -126,10 +130,14 @@ public class Matrices {
                         System.out.println("La multiplicacion de matriz por vector columna es \n" + "| "+ res5.getX()+" |" + "\n| "+ res5.getY()+" |" + "\n| "+ res5.getZ()+" |");
                         break;
                     }
+                    case 6:{
+                        System.out.println("Has regresado al menu de Principal");
+                        break;
+                    }
 
                 }
             case 3: {
-                System.out.println("Escoja el tipo de operacion a realizar con vectores en R3");
+                System.out.println("Escoja el tipo de operacion a realizar con vectores en R4");
                 System.out.println(" 1.  para Suma");
                 System.out.println(" 2.  para Resta");
                 System.out.println(" 3.  para Multiplicacion de dos Matrices");
@@ -141,43 +149,48 @@ public class Matrices {
 
                 switch (opcion_mat4) {
                     case 1: {
-                        Mat3x3 mat1 = Mat3a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 mat2 = Mat3a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 res1 = mat1.suma(mat2);
-                        resMat3c(res1);
+                        Mat4x4 mat1 = Mat4a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        Mat4x4 mat2 = Mat4a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        Mat4x4 res1 = mat1.suma(mat2);
+                        resMat4c(res1);
                         break;
                     }
                     case 2: {
-                        Mat3x3 mat1 = Mat3a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 mat2 = Mat3a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 res1 = mat1.resta(mat2);
-                        resMat3c(res1);
+                        Mat4x4 mat1 = Mat4a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        Mat4x4 mat2 = Mat4a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        Mat4x4 res1 = mat1.resta(mat2);
+                        resMat4c(res1);
                         break;
                     }
                     case 3: {
-                        Mat3x3 mat1 = Mat3a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 mat2 = Mat3a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 res1 = mat1.mul(mat2);
-                        resMat3c(res1);
+                        Mat4x4 mat1 = Mat4a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        Mat4x4 mat2 = Mat4a("Matriz B","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        Mat4x4 res1 = mat1.mul(mat2);
+                        resMat4c(res1);
                         break;
                     }
                     case 4: {
                         double alpha1 = 0;
                         alpha1 = lt.leerEntero("Ingrese el escalar", "Error ha ingresado un caracter no valido");
-                        Mat3x3 mat1 = Mat3a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        Mat3x3 res4 = mat1.mul(alpha1);
+                        Mat4x4 mat1 = Mat4a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        Mat4x4 res4 = mat1.mul(alpha1);
                         System.out.println("La multiplicacion de una matriz por un escalar es \n");
-                        resMat3c(res4);
+                        resMat4c(res4);
                         break;
                     }
                     case 5:{
-                        Mat3x3 mat1 = Mat3a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
-                        VecR3 v = new VecR3(1,0,0);
+                        Mat4x4 mat1 = Mat4a("Matriz A","Ingresar el numero de la matriz a en la posicion ", "Error, ingrese un numero valido");
+                        VecR4 v = new VecR4(1,0,0,0);
                         v.setX(lt.leerReal("Ingrese el primer numero vector","Error! Ha ingresado un caracter no valido"));
                         v.setY(lt.leerReal("Ingrese el segundo numero vector","Error! Ha ingresado un caracter no valido"));
-                        v.setZ(lt.leerReal("Ingrese el segundo numero vector","Error! Ha ingresado un caracter no valido"));
-                        VecR3 res5 = mat1.mul(v);
-                        System.out.println("La multiplicacion de matriz por vector columna es \n" + "| "+ res5.getX()+" |" + "\n| "+ res5.getY()+" |" + "\n| "+ res5.getZ()+" |");
+                        v.setZ(lt.leerReal("Ingrese el tercer numero vector","Error! Ha ingresado un caracter no valido"));
+                        v.setW(lt.leerReal("Ingrese el cuarto numero vector","Error! Ha ingresado un caracter no valido"));
+                        VecR4 res5 = mat1.mul(v);
+                        System.out.println("La multiplicacion de matriz por vector columna es \n" + "| "+ res5.getX()+" |" + "\n| "+ res5.getY()+" |" + "\n| "+ res5.getZ()+" |"+ "\n| "+ res5.getW()+" |");
+                        break;
+                    }
+                    case 6:{
+                        System.out.println("Has regresado al menu de Principal");
                         break;
                     }
 
@@ -197,7 +210,6 @@ public class Matrices {
         coly.setY(lt.leerReal("Ingresar el numero de la matriz a en la posicion (2,2)", "Error, ingrese un numero valido"));
         return new Mat2x2(colx,coly);
     }
-
 
     public void resMat2c(Mat2x2 c) {
         System.out.println( "| " +c.getColX().getX() + " " + c.getColY().getX() + " |");
@@ -222,36 +234,42 @@ public class Matrices {
         return new Mat3x3(colx,coly,colz);
     }
 
-
     public void resMat3c(Mat3x3 c) {
         System.out.println( "| " +c.getColX().getX() + " " + c.getColY().getX() + " " + c.getColZ().getX() +" |");
         System.out.println( "| " +c.getColX().getY() + " " + c.getColY().getY() + " " + c.getColZ().getY() +" |");
         System.out.println( "| " +c.getColX().getZ() + " " + c.getColY().getZ() + " " + c.getColZ().getZ() +" |");
-
     }
 
     public Mat4x4 Mat4a(String nombrematriz, String mensaje, String mensajeerror) {
-        VecR3 colx = new VecR3(1,0,0);
-        VecR3 coly = new VecR3(0,1,0);
-        VecR3 colz = new VecR3(0,0,1);
+        VecR4 colx = new VecR4(1,0,0,0);
+        VecR4 coly = new VecR4(0,1,0,0);
+        VecR4 colz = new VecR4(0,0,1,0);
+        VecR4 colw = new VecR4(0,0,0,1);
         System.out.println(nombrematriz);
         colx.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,1)", "Error, ingrese un numero valido"));
         coly.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,2)", "Error, ingrese un numero valido"));
         colz.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,3)", "Error, ingrese un numero valido"));
+        colw.setX(lt.leerReal("Ingresar el numero de la matriz a en la posicion (1,4)", "Error, ingrese un numero valido"));
         colx.setY(lt.leerReal("Ingresar el numero de la matriz a en la posicion (2,1)", "Error, ingrese un numero valido"));
         coly.setY(lt.leerReal("Ingresar el numero de la matriz a en la posicion (2,2)", "Error, ingrese un numero valido"));
         colz.setY(lt.leerReal("Ingresar el numero de la matriz a en la posicion (2,3)", "Error, ingrese un numero valido"));
+        colw.setY(lt.leerReal("Ingresar el numero de la matriz a en la posicion (2,4)", "Error, ingrese un numero valido"));
         colx.setZ(lt.leerReal("Ingresar el numero de la matriz a en la posicion (3,1)", "Error, ingrese un numero valido"));
         coly.setZ(lt.leerReal("Ingresar el numero de la matriz a en la posicion (3,2)", "Error, ingrese un numero valido"));
         colz.setZ(lt.leerReal("Ingresar el numero de la matriz a en la posicion (3,3)", "Error, ingrese un numero valido"));
-        return new Mat4x4(colx,coly,colz);
+        colw.setZ(lt.leerReal("Ingresar el numero de la matriz a en la posicion (3,4)", "Error, ingrese un numero valido"));
+        colx.setW(lt.leerReal("Ingresar el numero de la matriz a en la posicion (4,1)", "Error, ingrese un numero valido"));
+        coly.setW(lt.leerReal("Ingresar el numero de la matriz a en la posicion (4,2)", "Error, ingrese un numero valido"));
+        colz.setW(lt.leerReal("Ingresar el numero de la matriz a en la posicion (4,3)", "Error, ingrese un numero valido"));
+        colw.setW(lt.leerReal("Ingresar el numero de la matriz a en la posicion (4,4)", "Error, ingrese un numero valido"));
+        return new Mat4x4(colx,coly,colz,colw);
     }
 
-
     public void resMat4c(Mat4x4 c) {
-        System.out.println( "| " +c.getColX().getX() + " " + c.getColY().getX() + " " + c.getColZ().getX() +" |");
-        System.out.println( "| " +c.getColX().getY() + " " + c.getColY().getY() + " " + c.getColZ().getY() +" |");
-        System.out.println( "| " +c.getColX().getZ() + " " + c.getColY().getZ() + " " + c.getColZ().getZ() +" |");
+        System.out.println( "| " +c.getColX().getX() + " " + c.getColY().getX() + " " + c.getColZ().getX() + " " + c.getColW().getX() + " |");
+        System.out.println( "| " +c.getColX().getY() + " " + c.getColY().getY() + " " + c.getColZ().getY() + " " + c.getColW().getY() + " |");
+        System.out.println( "| " +c.getColX().getZ() + " " + c.getColY().getZ() + " " + c.getColZ().getZ() + " " + c.getColW().getZ() + " |");
+        System.out.println( "| " +c.getColX().getW() + " " + c.getColY().getW() + " " + c.getColW().getZ() + " " + c.getColW().getW() + " |");
 
     }
 
