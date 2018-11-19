@@ -121,7 +121,7 @@ public class VecR4 {
 
     public  void setW (double w){
 
-        this.z = z;
+        this.w = w;
     }
 
     public double getW (){

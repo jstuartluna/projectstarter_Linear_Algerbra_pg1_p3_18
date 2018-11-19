@@ -254,6 +254,8 @@ public class Matrices {
         System.out.println("| " + c.getColX().getZ() + "  " + c.getColY().getZ() + "  " + c.getColZ().getZ() + " |");
     }
 
+
+
     public Mat4x4 Mat4a (String nombrematriz, String mensaje, String mensajeerror){
             VecR4 colx = new VecR4(1, 0, 0, 0);
             VecR4 coly = new VecR4(0, 1, 0, 0);
