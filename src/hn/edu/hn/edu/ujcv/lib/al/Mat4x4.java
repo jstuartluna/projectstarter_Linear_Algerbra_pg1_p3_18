@@ -12,7 +12,20 @@ public class Mat4x4 {
         colY = new VecR4(0, 1, 0, 0);
         colZ = new VecR4(0, 0, 1, 0);
         colW = new VecR4(0, 0, 0, 1);
+    }
 
+    public Mat4x4(VecR4 colX ,VecR4 colY,VecR4 colZ,VecR4 colW){
+        this.colX = new VecR4(colX);
+        this.colY = new VecR4(colY);
+        this.colZ = new VecR4(colZ);
+        this.colW = new VecR4(colW);
+    }
+
+    public Mat4x4(Mat4x4 b){
+        this.colX = new VecR4(b.colX);
+        this.colY = new VecR4(b.colY);
+        this.colZ = new VecR4(b.colZ);
+        this.colZ = new VecR4(b.colW);
     }
 
     public VecR4 getColX() {
