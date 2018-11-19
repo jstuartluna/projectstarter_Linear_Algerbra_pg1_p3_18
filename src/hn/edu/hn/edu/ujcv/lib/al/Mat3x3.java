@@ -30,30 +30,35 @@ public class Mat3x3 {
     }
 
     public Mat3x3(Mat3x3 b){
-        this.colX = new VecR3(b.colX);
-        this.colY = new VecR3(b.colY);
-        this.colZ = new VecR3(b.colZ);
+        colX = new VecR3(b.colX);
+        colY = new VecR3(b.colY);
+        colZ = new VecR3(b.colZ);
     }
 
 
 
     public VecR3 getColX() {
+
         return colX;
     }
 
     public void setColX(VecR3 colX) {
+
         this.colX = colX;
     }
 
     public VecR3 getColY() {
+
         return colY;
     }
 
     public void setColY(VecR3 colY) {
+
         this.colY = colY;
     }
 
-    public VecR3 getColZ() {
+    public VecR3 getColZ()
+    {
         return colZ;
     }
 
@@ -62,7 +67,7 @@ public class Mat3x3 {
     }
 
     public VecR3 getFilaX() {
-        VecR3 retval = new VecR3(colX.getX(), colY.getX(), colZ.getZ());
+        VecR3 retval = new VecR3(colX.getX(), colY.getX(), colZ.getX());
         return retval;
     }
 
@@ -95,141 +100,65 @@ public class Mat3x3 {
         this.colZ.setZ(filaZ.getZ());
 
     }
-        // este contrato debe estar en las demas matrices
-        // y no debe variar mas que en la dimencion de los objetos
-        // retornados y recibidos.
-        // suma
+
         public Mat3x3 suma(Mat3x3 b) {
             Mat3x3 retval = new Mat3x3();
-            //          cx cy  cz              cx cy cz
-            // dado A  | 1  2  3 |  dado b  |  1  1  1 |  x
-            //         | 2  3  4 |          |  0  0  0 |  y
-            //         | 4  5  6 |          |  3  3  3 |  Z
-            //
-            //   retval:
-            //   |  a.cx.x + b.cx.x     a.cy.x +  b.cy.x    a.cz.x +  b.cz.x  |
-            //   |  a.cx.y + b.cx.y     a.cy.y +  b.cy.y    a.cz.y +  b.cz.y  |
-            //   |  a.cx.z + b.cx.z     a.cy.z +  b.cy.z    a.cz.z +  b.cz.z  |
-            //
-            //   a es this.
-            //   b es b
-            //   cx es colX
-            //   cy es colY
-            //   cz es colZ
-            //   x es   getX , setX
-            //   y es   getY , setY
-            //   z es   getZ , setZ
-
             retval.colX.setX(this.colX.getX() + b.colX.getX());
             retval.colX.setY(this.colX.getY() + b.colX.getY());
             retval.colX.setZ(this.colX.getZ() + b.colX.getZ());
             retval.colY.setX(this.colY.getX() + b.colY.getX());
             retval.colY.setY(this.colY.getY() + b.colY.getY());
-            retval.colY.setY(this.colY.getZ() + b.colY.getZ());
+            retval.colY.setZ(this.colY.getZ() + b.colY.getZ());
             retval.colZ.setX(this.colZ.getX() + b.colZ.getX());
             retval.colZ.setY(this.colZ.getY() + b.colZ.getY());
-            retval.colZ.setY(this.colZ.getZ() + b.colZ.getZ());
+            retval.colZ.setZ(this.colZ.getZ() + b.colZ.getZ());
             return retval;
         }
 
         // resta
         public Mat3x3 resta(Mat3x3 b) {
             Mat3x3 retval = new Mat3x3();
-            //          cx cy  cz              cx cy cz
-            // dado A  | 1  2  3 |  dado b  |  1  1  1 |  x
-            //         | 2  3  4 |          |  0  0  0 |  y
-            //         | 4  5  6 |          |  3  3  3 |  Z
-            //
-            //   retval:
-            //   |  a.cx.x - b.cx.x     a.cy.x - b.cy.x    a.cz.x - b.cz.x  |
-            //   |  a.cx.y - b.cx.y     a.cy.y - b.cy.y    a.cz.y - b.cz.y  |
-            //   |  a.cx.z - b.cx.z     a.cy.z - b.cy.z    a.cz.z - b.cz.z  |
-            //
-            //   a es this.
-            //   b es b
-            //   cx es colX
-            //   cy es colY
-            //   cz es colZ
-            //   x es   getX , setX
-            //   y es   getY , setY
-            //   z es   getZ , setZ
-
             retval.colX.setX(this.colX.getX() - b.colX.getX());
             retval.colX.setY(this.colX.getY() - b.colX.getY());
             retval.colX.setZ(this.colX.getZ() - b.colX.getZ());
             retval.colY.setX(this.colY.getX() - b.colY.getX());
             retval.colY.setY(this.colY.getY() - b.colY.getY());
-            retval.colY.setY(this.colY.getZ() - b.colY.getZ());
+            retval.colY.setZ(this.colY.getZ() - b.colY.getZ());
             retval.colZ.setX(this.colZ.getX() - b.colZ.getX());
             retval.colZ.setY(this.colZ.getY() - b.colZ.getY());
-            retval.colZ.setY(this.colZ.getZ() - b.colZ.getZ());
+            retval.colZ.setZ(this.colZ.getZ() - b.colZ.getZ());
+            retval.setColX(this.colX.sub(colX));
             return retval;
         }
 
         // multiplicacion escalar
         public Mat3x3 mul(double alpha) {
             Mat3x3 retval = new Mat3x3();
+
             retval.colX.setX(this.colX.getX() * alpha);
-            retval.colX.setX(this.colY.getX() * alpha);
-            retval.colX.setX(this.colZ.getX() * alpha);
-            retval.colY.setY(this.colX.getY() * alpha);
+            retval.colX.setY(this.colX.getY() * alpha);
+            retval.colX.setZ(this.colX.getZ() * alpha);
+            retval.colY.setX(this.colY.getX() * alpha);
             retval.colY.setY(this.colY.getY() * alpha);
-            retval.colY.setY(this.colZ.getY() * alpha);
-            retval.colZ.setY(this.colX.getZ() * alpha);
-            retval.colZ.setY(this.colY.getZ() * alpha);
-            retval.colZ.setY(this.colZ.getZ() * alpha);
+            retval.colY.setZ(this.colY.getZ() * alpha);
+            retval.colZ.setX(this.colZ.getX() * alpha);
+            retval.colZ.setY(this.colZ.getY() * alpha);
+            retval.colZ.setZ(this.colZ.getZ() * alpha);
             return new Mat3x3();
         }
 
         // multiplicacion vector columna
         public VecR3 mul(VecR3 v) {
             VecR3 retval = new VecR3();
-            //          cx cy  cz             cx
-            // dado A  | 1  2  3 |  dado b  |  1  |  x
-            //         | 2  3  4 |          |  0  |  y
-            //         | 4  5  6 |          |  3  |  Z
-            //           x  y  z
-            //   retval:
-            //   |   a.fx.dot(b.cx)  |
-            //   |   a.fy.dot(b.cx)  |
-            //   |   a.fz.dot(b.cx)  |
-            //
-            //   a es this.
-            //   b es b
-            //   cx es colX
-            //   cy es colY
-            //   cz es colZ
-            //   x es   getX , setX
-            //   y es   getY , setY
-            //   z es   getZ , setZ
             retval.setX(v.dotProduct(this.getFilaX()));
             retval.setY(v.dotProduct(this.getFilaY()));
             retval.setZ(v.dotProduct(this.getFilaZ()));
             return retval;
-
         }
 
         // multiplicacion por matriz
         public Mat3x3 mul(Mat3x3 b) {
             Mat3x3 retval = new Mat3x3();
-            //          cx cy  cz              cx cy cz
-            // dado A  | 1  2  3 |  dado b  |  1  1  1 |  x
-            //         | 2  3  4 |          |  0  0  0 |  y
-            //         | 4  5  6 |          |  3  3  3 |  Z
-            //           x  y  z
-            //   retval:
-            //   |   a.fx.dot(b.cx)   a.fx.dot(b.cy)   a.fx.dot(b.cz)|
-            //   |   a.fy.dot(b.cx)   a.fy.dot(b.cy)   a.fy.dot(b.cz)|
-            //   |   a.fz.dot(b.cx)   a.fz.dot(b.cy)   a.fz.dot(b.cz)|
-            //
-            //   a es this.
-            //   b es b
-            //   cx es colX
-            //   cy es colY
-            //   cz es colZ
-            //   x es   getX , setX
-            //   y es   getY , setY
-            //   z es   getZ , setZ
             retval.colX.setX(this.getFilaX().dotProduct(b.colX));
             retval.colY.setX(this.getFilaX().dotProduct(b.colY));
             retval.colZ.setX(this.getFilaX().dotProduct(b.colZ));
@@ -239,7 +168,6 @@ public class Mat3x3 {
             retval.colX.setZ(this.getFilaZ().dotProduct(b.colX));
             retval.colY.setZ(this.getFilaZ().dotProduct(b.colY));
             retval.colZ.setZ(this.getFilaZ().dotProduct(b.colZ));
-
             return retval;
     }
 

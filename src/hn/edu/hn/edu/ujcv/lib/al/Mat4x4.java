@@ -1,20 +1,19 @@
 package hn.edu.hn.edu.ujcv.lib.al;
 
 public class Mat4x4 {
-
     private VecR4 colX;
     private VecR4 colY;
     private VecR4 colZ;
     private VecR4 colW;
 
     public Mat4x4(){
-        colX = new VecR4(1, 0, 0, 0);
-        colY = new VecR4(0, 1, 0, 0);
-        colZ = new VecR4(0, 0, 1, 0);
-        colW = new VecR4(0, 0, 0, 1);
+        colX = new VecR4(1,0,0,0);
+        colY = new VecR4(0,1,0,0);
+        colZ = new VecR4(0,0,1,0);
+        colW = new VecR4(0,0,0,1);
     }
 
-    public Mat4x4(VecR4 colX ,VecR4 colY,VecR4 colZ,VecR4 colW){
+    public Mat4x4(VecR4 colX, VecR4 colY, VecR4 colZ, VecR4 colW){
         this.colX = new VecR4(colX);
         this.colY = new VecR4(colY);
         this.colZ = new VecR4(colZ);
@@ -26,6 +25,53 @@ public class Mat4x4 {
         colY = new VecR4(b.colY);
         colZ = new VecR4(b.colZ);
         colW = new VecR4(b.colW);
+    }
+    public VecR4 getFilaX(){
+        VecR4 retval = new VecR4(colX.getX(),colY.getX(), colZ.getX(), colW.getX());
+        return retval;
+    }
+
+    public void  setFilaX(VecR4 filaX){
+        this.colX.setX(filaX.getX());
+        this.colY.setX(filaX.getY());
+        this.colZ.setX(filaX.getZ());
+        this.colW.setX(filaX.getW());
+    }
+
+    public VecR4 getFilaY(){
+        VecR4 retval = new VecR4(colX.getY(),colY.getY(),colZ.getY(),colW.getY());
+        return retval;
+    }
+
+    public void  setFilaY(VecR4 filaY){
+        this.colX.setY(filaY.getX());
+        this.colY.setY(filaY.getY());
+        this.colZ.setY(filaY.getZ());
+        this.colW.setY(filaY.getW());
+    }
+
+    public VecR4 getFilaZ(){
+        VecR4 retval = new VecR4(colX.getZ(),colY.getZ(),colZ.getZ(),colW.getZ());
+        return retval;
+    }
+
+    public void  setFilaZ(VecR4 filaZ){
+        this.colX.setZ(filaZ.getX());
+        this.colY.setZ(filaZ.getY());
+        this.colZ.setZ(filaZ.getZ());
+        this.colW.setZ(filaZ.getZ());
+    }
+
+    public VecR4 getFilaW(){
+        VecR4 retval = new VecR4(colX.getW(),colY.getW(),colZ.getW(),colW.getW());
+        return retval;
+    }
+
+    public void  setFilaW(VecR4 filaW){
+        this.colX.setW(filaW.getX());
+        this.colY.setW(filaW.getY());
+        this.colZ.setW(filaW.getZ());
+        this.colW.setW(filaW.getZ());
     }
 
     public VecR4 getColX() {
@@ -49,74 +95,19 @@ public class Mat4x4 {
     }
 
     public VecR4 getColZ() {
-
         return colZ;
     }
 
     public void setColZ(VecR4 colZ) {
-
         this.colZ = colZ;
     }
 
     public VecR4 getColW() {
-
         return colW;
     }
 
     public void setColW(VecR4 colW) {
-
         this.colW = colW;
-    }
-
-    public VecR4 getFilaX(){
-
-        VecR4 retval = new VecR4(colX.getX(),colY.getX(),colZ.getX(),colW.getX());
-
-        return retval;
-    }
-
-    public void  setFilaX(VecR4 filaX){
-        this.colX.setX(filaX.getX());
-        this.colY.setX(filaX.getY());
-        this.colZ.setX(filaX.getZ());
-        this.colW.setX(filaX.getW());
-    }
-
-    public VecR4 getFilaY(){
-        VecR4 retval = new VecR4(colX.getY(),colY.getY(),colZ.getY(),colW.getY());
-        return retval;
-    }
-
-
-    public void  setFilaY(VecR4 filaY){
-        this.colX.setY(filaY.getX());
-        this.colY.setY(filaY.getY());
-        this.colZ.setY(filaY.getZ());
-        this.colW.setY(filaY.getW());
-    }
-
-    public VecR4 getFilaZ(){
-        VecR4 retval = new VecR4(colX.getZ(),colY.getZ(),colZ.getZ(),colW.getZ());
-        return retval;
-    }
-
-    public void  setFilaZ(VecR4 filaZ){
-        this.colX.setZ(filaZ.getX());
-        this.colY.setZ(filaZ.getY());
-        this.colZ.setZ(filaZ.getZ());
-        this.colW.setZ(filaZ.getW());
-    }
-
-    public VecR4 getFilaW(){
-        VecR4 retval = new VecR4(colX.getW(),colY.getW(),colZ.getW(),colW.getW());
-        return retval;
-    }
-
-    public void  setFilaW(VecR4 filaW){
-        this.colX.setW(filaW.getX());
-        this.colY.setW(filaW.getY());
-        this.colZ.setW(filaW.getZ());
-        this.colW.setW(filaW.getW());
     }
 
     public Mat4x4 suma (Mat4x4 b){
@@ -124,19 +115,19 @@ public class Mat4x4 {
         retval.colX.setX(this.colX.getX() + b.colX.getX());
         retval.colX.setY(this.colX.getY() + b.colX.getY());
         retval.colX.setZ(this.colX.getZ() + b.colX.getZ());
-        retval.colX.setZ(this.colX.getW() + b.colX.getW());
+        retval.colX.setW(this.colX.getW() + b.colX.getW());
         retval.colY.setX(this.colY.getX() + b.colY.getX());
         retval.colY.setY(this.colY.getY() + b.colY.getY());
-        retval.colY.setY(this.colY.getZ() + b.colY.getZ());
-        retval.colY.setY(this.colY.getW() + b.colY.getW());
+        retval.colY.setZ(this.colY.getZ() + b.colY.getZ());
+        retval.colY.setW(this.colY.getW() + b.colY.getW());
         retval.colZ.setX(this.colZ.getX() + b.colZ.getX());
         retval.colZ.setY(this.colZ.getY() + b.colZ.getY());
-        retval.colZ.setY(this.colZ.getZ() + b.colZ.getZ());
-        retval.colZ.setY(this.colZ.getW() + b.colZ.getW());
+        retval.colZ.setZ(this.colZ.getZ() + b.colZ.getZ());
+        retval.colZ.setW(this.colZ.getW() + b.colZ.getW());
         retval.colW.setX(this.colW.getX() + b.colW.getX());
         retval.colW.setY(this.colW.getY() + b.colW.getY());
-        retval.colW.setY(this.colW.getZ() + b.colW.getZ());
-        retval.colW.setY(this.colW.getW() + b.colW.getW());
+        retval.colW.setZ(this.colW.getZ() + b.colW.getZ());
+        retval.colW.setW(this.colW.getW() + b.colW.getW());
         return retval;
     }
 

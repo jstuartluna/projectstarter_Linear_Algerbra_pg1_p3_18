@@ -19,8 +19,8 @@ public class Mat2x2 {
     }
 
     public Mat2x2(Mat2x2 b){
-        this.colX = new VecR2(b.colX);
-        this.colY = new VecR2(b.colY);
+        colX = new VecR2(b.colX);
+        colY = new VecR2(b.colY);
     }
 
 

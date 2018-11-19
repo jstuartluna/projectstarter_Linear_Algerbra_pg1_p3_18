@@ -24,7 +24,7 @@ public class Vectores {
 
 
         switch (opcion_vec) {
-            case 1:
+            case 1: {
                 System.out.println("Escoja el tipo de operacion a realizar con vectores en R2");
                 System.out.println(" 1.  para Suma");
                 System.out.println(" 2.  para Resta");
@@ -46,7 +46,7 @@ public class Vectores {
                         resultadovecr2(res1);
                         break;
                     }
-                    case 2:{
+                    case 2: {
                         VecR2 a2 = VectorR2a();
                         VecR2 b2 = VectorR2b();
                         VecR2 res2 = a2.sub(b2);
@@ -54,8 +54,8 @@ public class Vectores {
                         mostrarvec2r2(b2);
                         resultadovecr2(res2);
                         break;
-                        }
-                    case 3:{
+                    }
+                    case 3: {
                         VecR2 a5 = VectorR2a();
                         VecR2 b5 = VectorR2b();
                         mostrarvec1r2(a5);
@@ -63,17 +63,17 @@ public class Vectores {
                         double res5 = a5.dotProduct(b5);
                         System.out.println("El producto punto es: \n" + res5);
                         break;
-                        }
-                    case 4:{
+                    }
+                    case 4: {
                         double alpha1;
                         alpha1 = lt.leerReal("Ingrese el escalar", "Error! Ha ingresado un caracter no valido");
                         VecR2 a6 = VectorR2a();
                         VecR2 res6 = a6.mul(alpha1);
-                            System.out.println("El escalar es \n" + alpha1);
+                        System.out.println("El escalar es \n" + alpha1);
                         mostrarvec1r2(a6);
                         resultadovecr2(res6);
                         break;
-                         }
+                    }
                     case 5: {
                         double alpha1;
                         alpha1 = lt.leerReal("Ingrese el escalar", "Error! Ha ingresado un caracter no valido");
@@ -83,13 +83,15 @@ public class Vectores {
                         mostrarvec1r2(a6);
                         resultadovecr2(res6);
                         break;
-                        }
-                    case 6:{
+                    }
+                    case 6: {
                         System.out.println("Has regresado al menu de Principal");
                         break;
                     }
-                    }
-                    return;
+
+                }
+                return;
+            }
             case 2:{
                 System.out.println("Escoja el tipo de operacion a realizar con vectores en R3");
                 System.out.println(" 1.  para Suma");
